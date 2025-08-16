@@ -1,14 +1,14 @@
 ---@meta Экран
 
 ---@class screen
-screen = {}
+screen = {};
 
 ---очистка экрана перед использованием
 ---@param color? ColorInstance цвет, который будет выведен для очистки [опционально, по-умолчанию чёрный]
-function screen.clear(color) end
+function screen.clear(color) end;
 
 ---вывод изображения с виртуального экрана на реальный
-function screen.flip() end
+function screen.flip() end;
 
 ---отрисовка прямоугольника
 ---@param x number положение на оси x
@@ -17,7 +17,7 @@ function screen.flip() end
 ---@param h number высота прямоугольника
 ---@param color ColorInstance цвет прямоугольника
 ---@param rot? number угол прямоугольника [опционально, по-умолчанию 0]
-function screen.drawRect(x, y, w, h, color, rot) end
+function screen.drawRect(x, y, w, h, color, rot) end;
 
 ---отрисовка прямоугольника
 ---@param x1 number положение на оси х - начало линии
@@ -25,14 +25,14 @@ function screen.drawRect(x, y, w, h, color, rot) end
 ---@param x2 number положение на оси х - конец линии
 ---@param y2 number положение на оси у - конец линии
 ---@param color ColorInstance цвет прямоугольника
-function screen.drawLine(x1, y1, x2, y2, color) end
+function screen.drawLine(x1, y1, x2, y2, color) end;
 
 ---отрисовка окружности
 ---@param x number положение на оси х
 ---@param y number положение на оси y
 ---@param radius number радиус окружности
 ---@param color ColorInstance цвет окружности
-function screen.drawCircle(x, y, radius, color) end
+function screen.drawCircle(x, y, radius, color) end;
 
 ---отрисовка треугольника
 ---@param x1 number координата первой вершины
@@ -42,4 +42,4 @@ function screen.drawCircle(x, y, radius, color) end
 ---@param x3 number координата третьей вершины
 ---@param y3 number координата третьей вершины
 ---@param color ColorInstance цвет треугольника
-function screen.drawTriangle(x1, y1, x2, y2, x3, y3, color) end
+function screen.drawTriangle(x1, y1, x2, y2, x3, y3, color) end;

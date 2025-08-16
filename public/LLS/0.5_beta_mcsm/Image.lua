@@ -9,7 +9,7 @@ Image = {
     rDn = 2,
     lDn = 3,
     Center = 4
-}
+};
 
 ---@alias imageEnum `Image.lUp`|`Image.rUp`|`Image.rDn`|`Image.lDn`|`Image.Center`|
 ---@alias imageNumbers 0|1|2|3|4
@@ -18,23 +18,23 @@ Image = {
 ---@param path string путь к изображению
 ---@return ImageInstance
 ---@nodiscard
-function Image.load(path) end
+function Image.load(path) end;
 
 ---выгрузка изображения
 ---@param img ImageInstance предварительно загруженное изображение
-function Image.unload(img) end
+function Image.unload(img) end;
 
 ---получение ширины изображения
 ---@param img ImageInstance предварительно загруженное изображение
 ---@return number
 ---@nodiscard
-function Image.w(img) end
+function Image.w(img) end;
 
 ---получение высоты изображения
 ---@param img ImageInstance предварительно загруженное изображение
 ---@return number
 ---@nodiscard
-function Image.h(img) end
+function Image.h(img) end;
 
 ---отрисовка изображения
 ---@param img ImageInstance предварительно загруженное изображение
@@ -50,7 +50,7 @@ function Image.h(img) end
 ---@param rotate? number угол поворота изображения [опционально, по-умолчанию 0]
 ---@param alpha? number прозрачность изображения [опционально, по-умолчанию 255]
 ---@param alMode? imageEnum|imageNumbers режим выравнивания изображения [опционально, по-умолчанию Image.lUP]
-function Image.draw(img, x, y, w, h, color, srcx, srcy, srcw, srch, rotate, alpha, alMode) end
+function Image.draw(img, x, y, w, h, color, srcx, srcy, srcw, srch, rotate, alpha, alMode) end;
 
 ---упрощённая отрисовка изображения
 ---@param img ImageInstance предварительно загруженное изображение
@@ -60,4 +60,4 @@ function Image.draw(img, x, y, w, h, color, srcx, srcy, srcw, srch, rotate, alph
 ---@param rotate? number угол поворота изображения [опционально, по-умолчанию 0]
 ---@param alpha? number прозрачность изображения [опционально, по-умолчанию 255]
 ---@param alMode? imageEnum|imageNumbers режим выравнивания изображения [опционально, по-умолчанию Image.lUP]
-function Image.draweasy(img, x, y, color, rotate, alpha, alMode) end
+function Image.draweasy(img, x, y, color, rotate, alpha, alMode) end;
