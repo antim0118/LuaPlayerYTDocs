@@ -1,3 +1,4 @@
+import { VERSIONS } from "@/constants";
 import type { LPYTVersion } from "@/types/LPYTVersion";
 import { createListCollection, Portal, Select } from "@chakra-ui/react";
 import { type Dispatch, type SetStateAction } from "react";
@@ -7,23 +8,11 @@ type Props = {
   setVersion: Dispatch<SetStateAction<LPYTVersion>>;
 };
 
-// const versions = ["0.31", "0.4", "0.5", "0.6"];
-const versions = ["0.5_beta_mcsm", "0.5_beta_2", "0.5_beta_3"];
-
 const versionsCollection = createListCollection({
-  items: versions.map((v) => {
-    // if (v == "0.5_beta1") {
-    //     return {
-    //         label: "v0.5 (BETA 1)",
-    //         value: v,
-    //     };
-    // } else {
-    return {
-      label: "v" + v,
-      value: v,
-    };
-    // }
-  }),
+  items: VERSIONS.map((v) => ({
+    label: "v" + v,
+    value: v,
+  })),
 });
 
 export const VersionSelector = ({ version, setVersion }: Props) => {

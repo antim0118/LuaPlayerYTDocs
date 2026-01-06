@@ -1,10 +1,11 @@
+import { DEFAULT_VERSION } from "@/constants";
 import type { LPYTVersion } from "@/types/LPYTVersion";
 import { useState, type Dispatch, type SetStateAction } from "react";
 
 type ReturnType = [LPYTVersion, Dispatch<SetStateAction<LPYTVersion>>];
 
 export const useVersionState = (): ReturnType => {
-    let defaultValue = "0.5_beta_2" as LPYTVersion;
+    let defaultValue = DEFAULT_VERSION as LPYTVersion;
 
     const storageVersion = localStorage.getItem("version");
     if (storageVersion) {
