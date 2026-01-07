@@ -4,24 +4,26 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { GetStartedLayout } from "@/components/tabs/GetStarted/GetStartedLayout";
 import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
+import { BASEPATH } from "./constants";
 
 function App() {
-    return (
-        <>
-            <BrowserRouter>
-                <Header />
-                <Routes>
-                    <Route path="*" element={<NotFound />} />
-                    <Route path="/" element={<Navigate to="/getstarted/info" />} />
-                    <Route path="getstarted/:category">
-                        <Route index element={<GetStartedLayout />} />
-                    </Route>
-                    <Route path="docs/:category" element={<DocsLayout />} />
-                    <Route path="textureCalc" element={<TextureCalcLayout />} />
-                </Routes>
-            </BrowserRouter>
-        </>
-    );
+  return (
+    <>
+      <BrowserRouter basename={`${BASEPATH}/`}>
+        <Header />
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Navigate to="/getstarted/info" />} />
+          <Route path="getstarted/:category">
+            <Route index element={<GetStartedLayout />} />
+          </Route>
+          <Route path="docs/:category" element={<DocsLayout />} />
+          <Route path="textureCalc" element={<TextureCalcLayout />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
+
