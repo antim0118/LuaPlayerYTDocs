@@ -13,7 +13,7 @@ export const Argument = ({ arg }: Props) => {
           {arg.name}
           {!arg.isRequired && "?"}
         </Code>
-        <Text color="gray.600" ml={1} fontWeight="light">
+        <Text fontStyle={"italic"} ml={1} fontWeight="light">
           ({arg.type.join(" | ")})
         </Text>
         {arg.description && <Text ml={1}>- {arg.description}</Text>}

@@ -4,11 +4,14 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { GetStartedLayout } from "@/components/tabs/GetStarted/GetStartedLayout";
 import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
+import { Box } from "@chakra-ui/react";
+import { useColorPalette } from "./components/ui/color-mode";
 
 function App() {
-    console.log(import.meta.env.BASE_URL)
+  const { bgColor } = useColorPalette();
+
   return (
-    <>
+    <Box background={bgColor} minH={"100vh"}>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Header />
         <Routes>
@@ -21,9 +24,8 @@ function App() {
           <Route path="textureCalc" element={<TextureCalcLayout />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </Box>
   );
 }
 
 export default App;
-

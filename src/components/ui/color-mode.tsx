@@ -71,7 +71,7 @@ export const useColorPalette = () => {
   const accentColorHex = useColorModeValue("#18181b", "#dc2626"); //используется в лого
   const accentColorPalette = useColorModeValue("gray", "red");
   const selectedFontColor = useColorModeValue("gray.200", "gray.900");
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("white", "gray.900");
 
   return { accentColor, accentColorHex, accentColorPalette, selectedFontColor, bgColor };
 };
