@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Box background={bgColor} minH={"100vh"}>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route path="*" element={<NotFound />} />
