@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { Sidebar, type SidebarItem } from "../../layout/Sidebar/Sidebar";
+import { Sidebar, type SidebarItemType } from "../../layout/Sidebar/Sidebar";
 import type { JSX } from "react";
 import { useParams } from "react-router-dom";
 import { Info } from "./pages/Info";
@@ -18,7 +18,7 @@ const content: { [link: string]: JSX.Element } = {
 export const GetStartedLayout = () => {
   const { category } = useParams();
 
-  const sidebarItems: SidebarItem[] = [
+  const sidebarItems: SidebarItemType[] = [
     {
       text: "О проекте",
       link: "info",
