@@ -1,7 +1,7 @@
 import { Box, VStack } from "@chakra-ui/react";
 import { useContext, type PropsWithChildren } from "react";
 import { useLocation } from "react-router-dom";
-import { useColorPalette } from "../../ui/color-mode";
+import { useColorPalette } from "../../ui/ColorMode";
 import { match } from "path-to-regexp";
 import { AppContext } from "@/AppContext";
 import { SidebarItem } from "./SidebarItem";

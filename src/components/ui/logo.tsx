@@ -1,4 +1,4 @@
-import { useColorPalette } from "./color-mode";
+import { useColorPalette } from "./ColorMode";
 
 type Props = {
   width?: number;

@@ -1,5 +1,5 @@
 import { Flex, Heading, Link, Text } from "@chakra-ui/react";
-import { useColorPalette } from "../ui/color-mode";
+import { useColorPalette } from "../ui/ColorMode";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {

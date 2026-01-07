@@ -1,5 +1,5 @@
 import { Flex, FormatByte, Slider, Text, useSlider, type UseSliderProps } from "@chakra-ui/react";
-import { useColorPalette } from "../ui/color-mode";
+import { useColorPalette } from "../ui/ColorMode";
 
 const getSwizzledValue = (val: number) => {
   for (let i = 1; i <= 9; i++) {

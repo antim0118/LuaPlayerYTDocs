@@ -1,4 +1,4 @@
-import { useColorPalette } from "@/components/ui/color-mode";
+import { useColorPalette } from "@/components/ui/ColorMode";
 import { Link, Tabs } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 

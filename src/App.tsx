@@ -5,7 +5,7 @@ import { GetStartedLayout } from "@/components/tabs/GetStarted/GetStartedLayout"
 import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
 import { Box } from "@chakra-ui/react";
-import { useColorPalette } from "./components/ui/color-mode";
+import { useColorPalette } from "./components/ui/ColorMode";
 
 function App() {
   const { bgColor } = useColorPalette();

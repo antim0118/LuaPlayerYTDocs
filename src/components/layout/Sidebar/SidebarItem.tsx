@@ -1,7 +1,7 @@
 import type { SidebarItemType } from "./Sidebar";
 import { Box, Link } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { useColorPalette } from "../../ui/color-mode";
+import { useColorPalette } from "../../ui/ColorMode";
 import { LuExternalLink } from "react-icons/lu";
 
 type Props = {

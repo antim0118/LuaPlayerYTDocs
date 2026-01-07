@@ -1,6 +1,6 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
 import { LuMenu, LuMoon, LuSun } from "react-icons/lu";
-import { useColorMode, useColorPalette } from "../../ui/color-mode";
+import { useColorMode, useColorPalette } from "../../ui/ColorMode";
 import { HeaderTabs } from "./HeaderTabs";
 import { Logo } from "@/components/ui/logo";
 import { useContext } from "react";
