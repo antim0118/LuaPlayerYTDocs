@@ -72,7 +72,7 @@ export const Info = () => {
         контента с RenPy на Lua, что позволило играть в новеллу на PSP.
       </Text>
       <Text>
-        LPYT продолжает поддерживаться и обновляться с 2020-х годов, в основном в рамках сообщества хобби-разработчиков
+        LPYT продолжает поддерживаться и обновляться с 2022-х годов, в основном в рамках сообщества хобби-разработчиков
         и инди-команд, заинтересованных в разработке игр для PSP с использованием Lua.
       </Text>
       <Heading>Основные возможности и API LPYT</Heading>
@@ -103,7 +103,7 @@ export const Info = () => {
       </Text>
       <Heading>Ссылки</Heading>
       <Text>
-        Вконтактле: <ExternalLink href="https://vk.com/nomoreyuliateam">@nomoreyuliateam</ExternalLink>
+        Вконтактле: <ExternalLink href="https://vk.com/yuliateamnotdeadyet">@yuliateamnotdeadyet</ExternalLink>
       </Text>
       <Text>
         Телега: <ExternalLink href="https://t.me/yuliateamdiditagain">@yuliateamdiditagain</ExternalLink>
