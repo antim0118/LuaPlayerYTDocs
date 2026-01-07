@@ -39,7 +39,7 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
       background={bgColor}
       mdDown={{
         // display: mobileMenuIsOpened ? "unset" : "none",
-        transition: "all 0.5s",
+        transition: "transform 0.25s cubic-bezier(0.5, 0, 0, 1)",
         transform: mobileMenuIsOpened ? "translateX(0vw)" : "translateX(-70vw)",
         zIndex: 1,
       }}
