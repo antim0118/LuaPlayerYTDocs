@@ -1,5 +1,6 @@
+import { Code } from "@/components/Code";
 import type { LuaArgument } from "@/types/lua";
-import { Box, Code, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
 type Props = {
   arg: LuaArgument;

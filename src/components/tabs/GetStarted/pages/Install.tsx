@@ -1,11 +1,12 @@
 import { ExternalLink } from "@/components/ExternalLink";
 import { ManyText } from "@/components/ManyText";
-import { Code, Flex, Heading, Kbd, Link, List, Text } from "@chakra-ui/react";
+import { Flex, Heading, Kbd, Link, List, Text } from "@chakra-ui/react";
 import luaExtension from "@/assets/getstarted/lua_extension.png";
 import llsFolder from "@/assets/getstarted/lls_folder.png";
 import luaSettingsGif from "@/assets/getstarted/lua_settings.gif";
 import luaSyntaxGif from "@/assets/getstarted/lua_syntax.gif";
 import { ImageSnippet } from "@/components/ImageSnippet";
+import { Code } from "@/components/Code";
 
 export const Install = () => {
   return (
