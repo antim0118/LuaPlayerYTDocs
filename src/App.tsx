@@ -4,12 +4,11 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { GetStartedLayout } from "@/components/tabs/GetStarted/GetStartedLayout";
 import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
-import { BASEPATH } from "./constants";
 
 function App() {
   return (
     <>
-      <BrowserRouter basename={`${BASEPATH}/`}>
+      <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
         <Header />
         <Routes>
           <Route path="*" element={<NotFound />} />

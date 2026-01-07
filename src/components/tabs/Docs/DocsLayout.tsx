@@ -7,7 +7,6 @@ import { Function } from "./Function";
 import { MainContainer } from "../../layout/MainContainer";
 import { useVersionState } from "@/hooks/useVersionState";
 import { ExternalLink } from "@/components/ExternalLink";
-import { BASEPATH } from "@/constants";
 
 export function DocsLayout() {
   const [version, setVersion] = useVersionState();
@@ -29,7 +28,7 @@ export function DocsLayout() {
     <Flex>
       <Sidebar items={sidebarItems}>
         <VersionSelector version={version} setVersion={setVersion} />
-        <ExternalLink href={`${BASEPATH}/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
+        <ExternalLink href={`${process.env.PUBLIC_URL}/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
       </Sidebar>
 
       <MainContainer>

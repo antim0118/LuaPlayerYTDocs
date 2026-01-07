@@ -1,4 +1,3 @@
-import { BASEPATH } from "@/constants";
 import type { LPYTVersion } from "@/types/LPYTVersion";
 import type { ParsedLuaFile } from "@/types/lua";
 import { parseLuaToObject } from "@/utils/luaParser";
@@ -18,7 +17,7 @@ export const useParsedFiles = (version: LPYTVersion) => {
         files = null;
         setIsLoading(true);
 
-        const response = await fetch(`${BASEPATH}/LLS/${version}/index.json`);
+        const response = await fetch(`${process.env.PUBLIC_URL}/LLS/${version}/index.json`);
         if (!response.ok) {
           throw new Error("Failed to fetch file list");
         }
@@ -26,7 +25,7 @@ export const useParsedFiles = (version: LPYTVersion) => {
         const fileList = await response.json();
 
         const loadFile = async (filePath: string) => {
-          const fileResponse = await fetch(`${BASEPATH}/LLS/${version}/${filePath}.lua`);
+          const fileResponse = await fetch(`${process.env.PUBLIC_URL}/LLS/${version}/${filePath}.lua`);
           if (!fileResponse.ok) {
             throw new Error(`Failed to fetch file: ${filePath}`);
           }
