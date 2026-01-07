@@ -8,19 +8,44 @@ import { AppContext } from "@/AppContext";
 
 export const Header = () => {
   const { toggleColorMode, colorMode } = useColorMode();
+  // const [locale, setLocale, localeList] = useLocale();
   const { setMobileMenuIsOpened } = useContext(AppContext);
   const { bgColor } = useColorPalette();
+
+  const rightSideButtons = (
+    <Flex gap={2}>
+      <Button variant="ghost" onClick={toggleColorMode}>
+        {colorMode === "light" ? <LuMoon /> : <LuSun />}
+      </Button>
+      {/* <Menu.Root onSelect={(v) => setLocale(v.value)}>
+        <Menu.Trigger asChild>
+          <Button variant="ghost" fontFamily="Twemoji Country Flags" fontSize={20}>
+            {getCountryFlagFromCode(locale)}
+          </Button>
+        </Menu.Trigger>
+        <Menu.Positioner>
+          <Menu.Content>
+            {localeList.map((v) => (
+              <Menu.Item key={v} value={v} fontFamily="Twemoji Country Flags">
+                {getCountryFlagFromCode(v)}
+              </Menu.Item>
+            ))}
+          </Menu.Content>
+        </Menu.Positioner>
+      </Menu.Root> */}
+    </Flex>
+  );
 
   const pcHeader = (
     <>
       <Flex justify="space-between" align="center" height={60} hideBelow="md">
-        <Logo width={36} height={36} />
+        <Flex>
+          <Logo width={36} height={36} />
+        </Flex>
         <Heading size="lg" fontWeight={900} userSelect="none">
           LuaPlayerYT
         </Heading>
-        <Button variant="ghost" onClick={toggleColorMode}>
-          {colorMode === "light" ? <LuMoon /> : <LuSun />}
-        </Button>
+        {rightSideButtons}
       </Flex>
       <Flex justify="space-between" align="center" height={40} hideBelow="md">
         <HeaderTabs />
@@ -40,9 +65,7 @@ export const Header = () => {
             LuaPlayerYT
           </Heading>
         </Flex>
-        <Button variant="ghost" onClick={toggleColorMode}>
-          {colorMode === "light" ? <LuMoon /> : <LuSun />}
-        </Button>
+        {rightSideButtons}
       </Flex>
       <Flex justify="space-between" align="center" height={40} hideFrom="md">
         <HeaderTabs />

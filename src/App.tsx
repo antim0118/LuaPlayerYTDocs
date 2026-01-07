@@ -6,9 +6,15 @@ import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
 import { Box } from "@chakra-ui/react";
 import { useColorPalette } from "./components/ui/ColorMode";
+import { useEffect } from "react";
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
 function App() {
   const { bgColor } = useColorPalette();
+
+  useEffect(() => {
+    polyfillCountryFlagEmojis();
+  }, []);
 
   return (
     <Box background={bgColor} minH={"100vh"}>
