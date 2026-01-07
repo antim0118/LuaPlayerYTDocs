@@ -6,9 +6,10 @@ import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
 import { NotFound } from "./components/layout/NotFound";
 
 function App() {
+    console.log(import.meta.env.BASE_URL)
   return (
     <>
-      <BrowserRouter basename={`/${import.meta.env.BASE_URL}`}>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Header />
         <Routes>
           <Route path="*" element={<NotFound />} />

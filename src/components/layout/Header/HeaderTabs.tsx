@@ -49,7 +49,6 @@ export const HeaderTabs = ({ orientation }: Props) => {
   if (!location || !location.length) {
     location = "getstarted/info"; //костыль из-за tabs.root
   }
-  console.log(location)
 
   const handleNavigate = ({ value }: { value: string }) => navigate(`/${value}`);
 
