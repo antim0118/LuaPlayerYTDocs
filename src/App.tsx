@@ -8,7 +8,7 @@ import { NotFound } from "./components/layout/NotFound";
 function App() {
   return (
     <>
-      <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
+      <BrowserRouter basename={`/${import.meta.env.BASE_URL}`}>
         <Header />
         <Routes>
           <Route path="*" element={<NotFound />} />

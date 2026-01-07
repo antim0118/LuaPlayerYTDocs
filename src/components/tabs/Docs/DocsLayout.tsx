@@ -28,7 +28,7 @@ export function DocsLayout() {
     <Flex>
       <Sidebar items={sidebarItems}>
         <VersionSelector version={version} setVersion={setVersion} />
-        <ExternalLink href={`${process.env.PUBLIC_URL}/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
+        <ExternalLink href={`${import.meta.env.BASE_URL}/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
       </Sidebar>
 
       <MainContainer>
