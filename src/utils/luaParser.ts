@@ -148,15 +148,4 @@ async function parseLuaToObject(luaContent: string): Promise<ParsedLuaFile> {
     return result;
 }
 
-// async function fetchAndParseLua(url: string) {
-//     try {
-//         const response = await fetch(url);
-//         const luaContent = await response.text();
-//         return await parseLuaToObject(luaContent);
-//     } catch (error) {
-//         console.error("Error fetching or parsing Lua file:", error);
-//         throw error;
-//     }
-// }
-
 export { parseLuaToObject };
