@@ -10,7 +10,6 @@ import { Building } from "./pages/Building";
 const content: { [link: string]: JSX.Element } = {
   ["info"]: <Info />,
   ["install"]: <Install />,
-  ["123"]: <Text>Емае</Text>,
   ["building"]: <Building />,
   ["bugs"]: <Text>Да я хз вроде всё идеально работает хер докопаешься</Text>,
 };
