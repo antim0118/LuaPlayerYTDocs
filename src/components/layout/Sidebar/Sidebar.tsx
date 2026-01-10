@@ -5,6 +5,7 @@ import { useColorPalette } from "../../ui/ColorMode";
 import { match } from "path-to-regexp";
 import { AppContext } from "@/AppContext";
 import { SidebarItem } from "./SidebarItem";
+import { HEADER_HEIGHT } from "@/constants";
 
 export type SidebarItemType = {
   text: string;
@@ -34,7 +35,7 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
       borderColor="#80808040"
       position="fixed"
       p={4}
-      h="-webkit-calc(100vh - 100px)"
+      h={`calc(100vh - ${HEADER_HEIGHT}px)`}
       overflowY="auto"
       background={bgColor}
       mdDown={{

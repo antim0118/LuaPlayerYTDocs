@@ -5,6 +5,7 @@ import { HeaderTabs } from "./HeaderTabs";
 import { Logo } from "@/components/ui/logo";
 import { useContext } from "react";
 import { AppContext } from "@/AppContext";
+import { HEADER_HEIGHT } from "@/constants";
 
 export const Header = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -75,7 +76,7 @@ export const Header = () => {
 
   return (
     <Flex
-      height={100}
+      height={HEADER_HEIGHT}
       justify="space-between"
       direction="column"
       position="sticky"
