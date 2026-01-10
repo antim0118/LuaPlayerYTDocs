@@ -40,7 +40,7 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
       mdDown={{
         // display: mobileMenuIsOpened ? "unset" : "none",
         transition: "transform 0.25s cubic-bezier(0.5, 0, 0, 1)",
-        transform: mobileMenuIsOpened ? "translateX(0vw)" : "translateX(-70vw)",
+        transform: mobileMenuIsOpened ? "translateX(0)" : "translateX(-100%)",
         zIndex: 1,
       }}
     >
