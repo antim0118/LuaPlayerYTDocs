@@ -3,23 +3,22 @@ import type { TabType } from "./types/TabType";
 
 export const HEADER_HEIGHT = 100;
 
-export const VERSIONS: LPYTVersion[] = ["0.5_beta_mcsm", "0.5_beta_2", "0.5_beta_3"];
+export const VERSIONS: LPYTVersion[] = [/*"0.5_beta_mcsm",*/ "0.5_beta_2", "0.5_beta_3"];
 
 export const DEFAULT_VERSION: LPYTVersion = "0.5_beta_3";
 
 export const HEADER_TABS: TabType[] = [
   {
     text: "Начало работы",
-    value: "getstarted/info",
+    value: "getstarted",
   },
   {
     text: "Документация",
-    value: "docs/buttons",
+    value: "docs",
   },
   {
     text: "Туториалы",
     value: "tutorials",
-    disabled: true,
   },
   {
     text: "Библиотеки",
