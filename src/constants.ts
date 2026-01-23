@@ -10,15 +10,16 @@ export const DEFAULT_VERSION: LPYTVersion = "0.5_beta_3";
 export const HEADER_TABS: TabType[] = [
   {
     text: "Начало работы",
-    value: "getstarted",
+    value: "getstarted/info",
   },
   {
     text: "Документация",
-    value: "docs",
+    value: "docs/buttons",
   },
   {
     text: "Туториалы",
     value: "tutorials",
+    disabled: true,
   },
   {
     text: "Библиотеки",
