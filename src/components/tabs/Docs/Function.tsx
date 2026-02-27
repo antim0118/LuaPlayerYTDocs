@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const Function = ({ func }: Props) => {
-  const argsList = func.args.map((arg) => (arg.isRequired ? arg.name : arg.name + "?")).join(", ");
+  const argsList = func.args.map((arg) => (arg.isRequired ? arg.name : `[${arg.name}]`)).join(", ");
 
   return (
     <Box key={func.name} id={func.name} borderTop="solid" pt={4} pb={4}>
