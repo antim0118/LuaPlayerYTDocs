@@ -1,22 +1,22 @@
-import { Button, Flex, Heading } from "@chakra-ui/react";
-import { LuMenu, LuMoon, LuSun } from "react-icons/lu";
-import { useColorMode, useColorPalette } from "../../ui/ColorMode";
-import { HeaderTabs } from "./HeaderTabs";
-import { Logo } from "@/components/ui/logo";
-import { useContext } from "react";
-import { AppContext } from "@/AppContext";
-import { HEADER_HEIGHT } from "@/constants";
+import { Button, Flex, Heading } from '@chakra-ui/react'
+import { LuMenu, LuMoon, LuSun } from 'react-icons/lu'
+import { useColorMode, useColorPalette } from '../../ui/ColorMode'
+import { HeaderTabs } from './HeaderTabs'
+import { Logo } from '@/components/ui/Logo'
+import { useContext } from 'react'
+import { AppContext } from '@/AppContext'
+import { HEADER_HEIGHT } from '@/constants'
 
 export const Header = () => {
-  const { toggleColorMode, colorMode } = useColorMode();
+  const { toggleColorMode, colorMode } = useColorMode()
   // const [locale, setLocale, localeList] = useLocale();
-  const { setMobileMenuIsOpened } = useContext(AppContext);
-  const { bgColor } = useColorPalette();
+  const { setMobileMenuIsOpened } = useContext(AppContext)
+  const { bgColor } = useColorPalette()
 
   const rightSideButtons = (
     <Flex gap={2}>
       <Button variant="ghost" onClick={toggleColorMode}>
-        {colorMode === "light" ? <LuMoon /> : <LuSun />}
+        {colorMode === 'light' ? <LuMoon /> : <LuSun />}
       </Button>
       {/* <Menu.Root onSelect={(v) => setLocale(v.value)}>
         <Menu.Trigger asChild>
@@ -35,7 +35,7 @@ export const Header = () => {
         </Menu.Positioner>
       </Menu.Root> */}
     </Flex>
-  );
+  )
 
   const pcHeader = (
     <>
@@ -52,7 +52,7 @@ export const Header = () => {
         <HeaderTabs />
       </Flex>
     </>
-  );
+  )
 
   const mobileHeader = (
     <>
@@ -72,7 +72,7 @@ export const Header = () => {
         <HeaderTabs />
       </Flex>
     </>
-  );
+  )
 
   return (
     <Flex
@@ -91,5 +91,5 @@ export const Header = () => {
       {pcHeader}
       {mobileHeader}
     </Flex>
-  );
-};
+  )
+}

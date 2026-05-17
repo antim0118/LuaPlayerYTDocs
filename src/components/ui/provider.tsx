@@ -1,12 +1,10 @@
-"use client";
+import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
+import { ColorModeProvider, type ColorModeProviderProps } from './ColorMode'
+import { AppContext } from '@/AppContext'
+import { useState } from 'react'
 
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
-import { ColorModeProvider, type ColorModeProviderProps } from "./ColorMode";
-import { AppContext } from "@/AppContext";
-import { useState } from "react";
-
-export function Provider(props: ColorModeProviderProps) {
-  const [mobileMenuIsOpened, setMobileMenuIsOpened] = useState(false);
+export const Provider = (props: ColorModeProviderProps) => {
+  const [mobileMenuIsOpened, setMobileMenuIsOpened] = useState(false)
 
   return (
     <AppContext value={{ mobileMenuIsOpened, setMobileMenuIsOpened }}>
@@ -14,6 +12,5 @@ export function Provider(props: ColorModeProviderProps) {
         <ColorModeProvider {...props} />
       </ChakraProvider>
     </AppContext>
-  );
+  )
 }
-

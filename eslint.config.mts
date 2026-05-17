@@ -7,7 +7,7 @@ import stylistic from '@stylistic/eslint-plugin'
 export default defineConfig([
   stylistic.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: {
       js,
       '@stylistic': stylistic,
@@ -28,12 +28,14 @@ export default defineConfig([
         },
       ],
       '@stylistic/arrow-parens': ['error', 'always'],
-      'arrow-body-style': ['error', 'as-needed'],
+      // 'arrow-body-style': ['error', 'as-needed'],
       'func-style': ['error', 'expression', { allowArrowFunctions: true }],
       '@typescript-eslint/no-require-imports': ['off'],
+      '@stylistic/jsx-one-expression-per-line': ['off'],
+      '@stylistic/comma-dangle': ['off']
     },
   },
   tseslint.configs.recommended,
 
-  { ignores: ['build/', 'node_modules/', '_src/'] },
+  { ignores: ['build/', 'node_modules/', '_src/', 'dist/'] },
 ])

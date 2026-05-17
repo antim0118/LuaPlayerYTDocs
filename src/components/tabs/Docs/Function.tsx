@@ -1,14 +1,14 @@
-import type { LuaFunction } from "@/types/lua";
-import { Box, Heading, VStack, Text } from "@chakra-ui/react";
-import { Argument } from "./Argument";
-import { Code } from "@/components/Code";
+import type { LuaFunction } from '@/types/lua'
+import { Box, Heading, VStack, Text } from '@chakra-ui/react'
+import { Argument } from './Argument'
+import { Code } from '@/components/Code'
 
 type Props = {
-  func: LuaFunction;
-};
+  func: LuaFunction
+}
 
 export const Function = ({ func }: Props) => {
-  const argsList = func.args.map((arg) => (arg.isRequired ? arg.name : `[${arg.name}]`)).join(", ");
+  const argsList = func.args.map((arg) => (arg.isRequired ? arg.name : `[${arg.name}]`)).join(', ')
 
   return (
     <Box key={func.name} id={func.name} borderTop="solid" pt={4} pb={4}>
@@ -28,7 +28,7 @@ export const Function = ({ func }: Props) => {
           </VStack>
         </Box>
       )}
-      {typeof func.return === "string" && (
+      {typeof func.return === 'string' && (
         <Box>
           <Heading as="h3" size="md" mb={2}>
             Возвращает
@@ -40,5 +40,5 @@ export const Function = ({ func }: Props) => {
         </Box>
       )}
     </Box>
-  );
-};
+  )
+}

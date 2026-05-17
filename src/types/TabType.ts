@@ -1,5 +1,5 @@
 export type TabType = {
-  text: string;
-  value: string;
-  disabled?: boolean;
-};
+  text: string
+  value: string
+  disabled?: boolean
+}

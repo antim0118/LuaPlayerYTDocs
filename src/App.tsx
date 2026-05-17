@@ -1,23 +1,24 @@
-import { DocsLayout } from "@/components/tabs/Docs/DocsLayout";
-import { Header } from "@/components/layout/Header/Header";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { GetStartedLayout } from "@/components/tabs/GetStarted/GetStartedLayout";
-import { TextureCalcLayout } from "./components/tabs/TextureCalcLayout";
-import { NotFound } from "./components/layout/NotFound";
-import { Box } from "@chakra-ui/react";
-import { useColorPalette } from "./components/ui/ColorMode";
-import { useEffect } from "react";
-import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+import { DocsLayout } from '@/components/tabs/Docs/DocsLayout'
+import { Header } from '@/components/layout/Header/Header'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { GetStartedLayout } from '@/components/tabs/GetStarted/GetStartedLayout'
+import { TextureCalcLayout } from './components/tabs/TextureCalcLayout'
+import { NotFound } from './components/layout/NotFound'
+import { Box } from '@chakra-ui/react'
+import { useColorPalette } from './components/ui/ColorMode'
+import { useEffect } from 'react'
+import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill'
+import { TutorialsLayout } from './components/tabs/Tutorials/TutorialsLayout'
 
-function App() {
-  const { bgColor } = useColorPalette();
+export const App = () => {
+  const { bgColor } = useColorPalette()
 
   useEffect(() => {
-    polyfillCountryFlagEmojis();
-  }, []);
+    polyfillCountryFlagEmojis()
+  }, [])
 
   return (
-    <Box background={bgColor} minH={"100vh"}>
+    <Box background={bgColor} minH="100vh">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -31,7 +32,5 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Box>
-  );
+  )
 }
-
-export default App;

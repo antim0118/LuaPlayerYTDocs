@@ -1,28 +1,29 @@
-import { ExternalLink } from "@/components/ExternalLink";
-import { ManyText } from "@/components/ManyText";
-import { Flex, Heading, Kbd, Link, List, Text } from "@chakra-ui/react";
-import luaExtension from "@/assets/getstarted/lua_extension.png";
-import llsFolder from "@/assets/getstarted/lls_folder.png";
-import luaSettingsGif from "@/assets/getstarted/lua_settings.gif";
-import luaSyntaxGif from "@/assets/getstarted/lua_syntax.gif";
-import { ImageSnippet } from "@/components/ImageSnippet";
-import { Code } from "@/components/Code";
+/* eslint-disable @stylistic/max-len */
+import { ExternalLink } from '@/components/ExternalLink'
+import { ManyText } from '@/components/ManyText'
+import { Flex, Heading, Kbd, Link, List, Text } from '@chakra-ui/react'
+import luaExtension from '@/assets/getstarted/lua_extension.png'
+import llsFolder from '@/assets/getstarted/lls_folder.png'
+import luaSettingsGif from '@/assets/getstarted/lua_settings.gif'
+import luaSyntaxGif from '@/assets/getstarted/lua_syntax.gif'
+import { ImageSnippet } from '@/components/ImageSnippet'
+import { Code } from '@/components/Code'
 
 export const Install = () => {
   return (
     <Flex direction="column" gap={6}>
       <ManyText>
         <Heading>Установка</Heading>
-        {`Данный гайд по установке рассчитан на тех, кто собирается разрабатывать игры на языке программирования Lua.`}
-        <Text fontStyle={"italic"}>
+        Данный гайд по установке рассчитан на тех, кто собирается разрабатывать игры на языке программирования Lua.
+        <Text fontStyle="italic">
           Если вам необходимо установить игру на базе LuaPlayerYT, то обратитесь к инструкции по установке самой игры.
           Если таковой не имеется, то обратитесь за помощью в больницу.
         </Text>
         <Text>
-          Актуальную версию LuaPlayerYT можно найти в{" "}
+          Актуальную версию LuaPlayerYT можно найти в{' '}
           <ExternalLink href="https://github.com/antim0118/LuaPlayer-by-YuliaTeam">Github-репозитории</ExternalLink>.
         </Text>
-        {`Работа Lua-плеера происходит следующим образом:`}
+        Работа Lua-плеера происходит следующим образом:
         <List.Root as="ol" listStyle="decimal" pl={6}>
           <List.Item>Запускается исполняемый файл "EBOOT.PBP".</List.Item>
           <List.Item>Исполняемый файл запускает файл "script.lua".</List.Item>
@@ -30,11 +31,11 @@ export const Install = () => {
         {`Таким образом, разработка Lua-кода должна начинаться с файла "script.lua", после чего может переходить в другие файлы.`}
 
         <Heading>Подсветка синтаксиса и подсказки в VS Code</Heading>
-        {`Подсветка синтаксиса и подсказки помогают в разработке, поскольку дают чёткое представление о доступных функциях/константах и указывают на ошибки в аргументах функций.`}
-        {`Установка проводится в несколько этапов:`}
+        Подсветка синтаксиса и подсказки помогают в разработке, поскольку дают чёткое представление о доступных функциях/константах и указывают на ошибки в аргументах функций.
+        Установка проводится в несколько этапов:
         <List.Root as="ol" listStyle="decimal" pl={6}>
           <List.Item>
-            Для подсветки синтаксиса в VS Code используется расширение{" "}
+            Для подсветки синтаксиса в VS Code используется расширение{' '}
             <ExternalLink href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">
               Lua Language Server от sumneko
             </ExternalLink>
@@ -45,8 +46,8 @@ export const Install = () => {
           </ImageSnippet>
           <List.Item>
             Далее необходимо загрузить архив с Lua-файлами синтаксиса под вашу версию Lua-плеера. Найти архив можно во
-            вкладке{" "}
-            <Link fontStyle={"italic"} href="/docs/buttons">
+            вкладке{' '}
+            <Link fontStyle="italic" href="/docs/buttons">
               "Документация"
             </Link>
             , выбрав нужную версию и нажав на "Скачать LLM архив".
@@ -72,7 +73,7 @@ export const Install = () => {
               также запишутся локально в папку .vscode внутри вашего проекта.
             </List.Item>
           </List.Root>
-          <Text fontStyle={"italic"}>
+          <Text fontStyle="italic">
             Примечание: Если вы собираетесь использовать разные версии LuaPlayerYT в разных проектах или у вас имеются
             сторонние проекты Lua без Lua-плеера, то устанавливайте синтаксис изолированно через вкладку Workspace.
           </Text>
@@ -90,7 +91,7 @@ export const Install = () => {
             Проверка подсказок
           </ImageSnippet>
         </List.Root>
-        {`Если всё хорошо, то значит установка прошла успешно!`}
+        Если всё хорошо, то значит установка прошла успешно!
       </ManyText>
 
       {/* <Text color={accentColor}>
@@ -103,5 +104,5 @@ export const Install = () => {
       <Text></Text>
       <Text>sadsa</Text> */}
     </Flex>
-  );
-};
+  )
+}

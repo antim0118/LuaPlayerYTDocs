@@ -1,12 +1,12 @@
-import { useColorPalette } from "./ColorMode";
+import { useColorPalette } from './ColorMode'
 
 type Props = {
-  width?: number;
-  height?: number;
-};
+  width?: number
+  height?: number
+}
 
 export const Logo = ({ width = 88, height = 118 }: Props) => {
-  const { accentColorHex } = useColorPalette();
+  const { accentColorHex } = useColorPalette()
 
   return (
     <svg width={width} height={height} viewBox="0 0 88 118" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,5 +17,5 @@ export const Logo = ({ width = 88, height = 118 }: Props) => {
         fill={accentColorHex}
       />
     </svg>
-  );
-};
+  )
+}

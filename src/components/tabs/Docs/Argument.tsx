@@ -1,10 +1,10 @@
-import { Code } from "@/components/Code";
-import type { LuaArgument } from "@/types/lua";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Code } from '@/components/Code'
+import type { LuaArgument } from '@/types/lua'
+import { Box, Flex, Text } from '@chakra-ui/react'
 
 type Props = {
-  arg: LuaArgument;
-};
+  arg: LuaArgument
+}
 
 export const Argument = ({ arg }: Props) => {
   return (
@@ -12,13 +12,13 @@ export const Argument = ({ arg }: Props) => {
       <Flex>
         <Code>
           {arg.name}
-          {!arg.isRequired && "?"}
+          {!arg.isRequired && '?'}
         </Code>
-        <Text fontStyle={"italic"} ml={1} fontWeight="light">
-          ({arg.type.join(" | ")})
+        <Text fontStyle="italic" ml={1} fontWeight="light">
+          ({arg.type.join(' | ')})
         </Text>
         {arg.description && <Text ml={1}>- {arg.description}</Text>}
       </Flex>
     </Box>
-  );
-};
+  )
+}

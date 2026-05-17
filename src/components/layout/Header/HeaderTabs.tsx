@@ -1,23 +1,23 @@
-import { useColorPalette } from "@/components/ui/ColorMode";
-import { HEADER_TABS } from "@/constants";
-import { Link, Tabs } from "@chakra-ui/react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useColorPalette } from '@/components/ui/ColorMode'
+import { HEADER_TABS } from '@/constants'
+import { Link, Tabs } from '@chakra-ui/react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 type Props = {
-  orientation?: "horizontal" | "vertical";
-};
+  orientation?: 'horizontal' | 'vertical'
+}
 
 export const HeaderTabs = ({ orientation }: Props) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  let location = useLocation().pathname.substring(1);
+  let location = useLocation().pathname.substring(1)
   if (!location || !location.length) {
-    location = "getstarted/info"; //костыль из-за tabs.root
+    location = 'getstarted/info' // костыль из-за tabs.root
   }
 
-  const handleNavigate = ({ value }: { value: string }) => navigate(`/${value}`);
+  const handleNavigate = ({ value }: { value: string }) => navigate(`/${value}`)
 
-  const { accentColorPalette } = useColorPalette();
+  const { accentColorPalette } = useColorPalette()
 
   return (
     <>
@@ -34,7 +34,8 @@ export const HeaderTabs = ({ orientation }: Props) => {
         <Tabs.List>
           {HEADER_TABS.map((tab) => (
             <Tabs.Trigger key={tab.value} value={tab.value} asChild disabled={tab.disabled}>
-              <Link unstyled href="#">
+              <Link unstyled href="#" onClick={() => !tab.disabled && handleNavigate(tab)}>
+                {/* onClick - костыль для выхода в начальное состояние вкладки, если она уже активна */}
                 {tab.text}
               </Link>
             </Tabs.Trigger>
@@ -42,5 +43,5 @@ export const HeaderTabs = ({ orientation }: Props) => {
         </Tabs.List>
       </Tabs.Root>
     </>
-  );
-};
+  )
+}

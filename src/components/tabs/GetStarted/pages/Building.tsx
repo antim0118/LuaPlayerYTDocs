@@ -1,5 +1,6 @@
-import { ExternalLink } from "@/components/ExternalLink";
-import { Flex, Text } from "@chakra-ui/react";
+/* eslint-disable @stylistic/max-len */
+import { ExternalLink } from '@/components/ExternalLink'
+import { Flex, Text } from '@chakra-ui/react'
 
 export const Building = () => {
   return (
@@ -9,5 +10,5 @@ export const Building = () => {
       </Text>
       <Text>Загрузить и найти инструкцию по скачиванию можно <ExternalLink href="https://github.com/antim0118/LuaPlayer-by-YuliaTeam">в репозитории</ExternalLink></Text>
     </Flex>
-  );
-};
+  )
+}

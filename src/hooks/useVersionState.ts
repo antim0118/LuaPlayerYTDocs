@@ -1,7 +1,5 @@
-import { DEFAULT_VERSION } from "@/constants";
-import type { LPYTVersion } from "@/types/LPYTVersion";
-import { useLocalStorage } from "./useLocalStorage";
+import { DEFAULT_VERSION } from '@/constants'
+import type { LPYTVersion } from '@/types/LPYTVersion'
+import { useLocalStorage } from './useLocalStorage'
 
-export const useVersionState = () => {
-  return useLocalStorage<LPYTVersion>("version", DEFAULT_VERSION);
-};
+export const useVersionState = () => useLocalStorage<LPYTVersion>('version', DEFAULT_VERSION)

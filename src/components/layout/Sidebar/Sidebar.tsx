@@ -1,31 +1,31 @@
-import { Box, VStack } from "@chakra-ui/react";
-import { useContext, type PropsWithChildren } from "react";
-import { useLocation } from "react-router-dom";
-import { useColorPalette } from "../../ui/ColorMode";
-import { match } from "path-to-regexp";
-import { AppContext } from "@/AppContext";
-import { SidebarItem } from "./SidebarItem";
-import { HEADER_HEIGHT } from "@/constants";
+import { Box, VStack } from '@chakra-ui/react'
+import { useContext, type PropsWithChildren } from 'react'
+import { useLocation } from 'react-router-dom'
+import { useColorPalette } from '../../ui/ColorMode'
+import { match } from 'path-to-regexp'
+import { AppContext } from '@/AppContext'
+import { SidebarItem } from './SidebarItem'
+import { HEADER_HEIGHT } from '@/constants'
 
 export type SidebarItemType = {
-  text: string;
-  link: string;
-  isSelected?: boolean;
-};
+  text: string
+  link: string
+  isSelected?: boolean
+}
 
 export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }) => {
-  const { bgColor } = useColorPalette();
-  const location = match("/:tab/:category")(useLocation().pathname);
-  const { mobileMenuIsOpened } = useContext(AppContext);
+  const { bgColor } = useColorPalette()
+  const location = match('/:tab/:category')(useLocation().pathname)
+  const { mobileMenuIsOpened } = useContext(AppContext)
 
-  let category = "";
-  if (typeof location === "object") {
-    category = location.params["category"] as string;
+  let category = ''
+  if (typeof location === 'object') {
+    category = location.params['category'] as string
   }
 
   const sidebarItems = props.items?.map((item, idx) => {
-    return <SidebarItem key={idx} item={item} isSelected={category === item.link} />;
-  });
+    return <SidebarItem key={idx} item={item} isSelected={category === item.link} />
+  })
 
   return (
     <Box
@@ -40,8 +40,8 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
       background={bgColor}
       mdDown={{
         // display: mobileMenuIsOpened ? "unset" : "none",
-        transition: "transform 0.25s cubic-bezier(0.5, 0, 0, 1)",
-        transform: mobileMenuIsOpened ? "translateX(0)" : "translateX(-100%)",
+        transition: 'transform 0.25s cubic-bezier(0.5, 0, 0, 1)',
+        transform: mobileMenuIsOpened ? 'translateX(0)' : 'translateX(-100%)',
         zIndex: 1,
       }}
     >
@@ -52,5 +52,5 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
         </VStack>
       </VStack>
     </Box>
-  );
-};
+  )
+}

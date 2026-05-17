@@ -1,19 +1,19 @@
-import { VERSIONS } from "@/constants";
-import type { LPYTVersion } from "@/types/LPYTVersion";
-import { createListCollection, Portal, Select } from "@chakra-ui/react";
-import { type Dispatch, type SetStateAction } from "react";
+import { VERSIONS } from '@/constants'
+import type { LPYTVersion } from '@/types/LPYTVersion'
+import { createListCollection, Portal, Select } from '@chakra-ui/react'
+import { type Dispatch, type SetStateAction } from 'react'
 
 type Props = {
-  version: LPYTVersion;
-  setVersion: Dispatch<SetStateAction<LPYTVersion>>;
-};
+  version: LPYTVersion
+  setVersion: Dispatch<SetStateAction<LPYTVersion>>
+}
 
 const versionsCollection = createListCollection({
   items: VERSIONS.map((v) => ({
-    label: "v" + v,
+    label: 'v' + v,
     value: v,
   })),
-});
+})
 
 export const VersionSelector = ({ version, setVersion }: Props) => {
   return (
@@ -46,5 +46,5 @@ export const VersionSelector = ({ version, setVersion }: Props) => {
         </Select.Positioner>
       </Portal>
     </Select.Root>
-  );
-};
+  )
+}

@@ -1,44 +1,44 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
-import { Sidebar, type SidebarItemType } from "../../layout/Sidebar/Sidebar";
-import type { JSX } from "react";
-import { useParams } from "react-router-dom";
-import { Info } from "./pages/Info";
-import { Install } from "./pages/Install";
-import { MainContainer } from "../../layout/MainContainer";
-import { Building } from "./pages/Building";
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
+import type { JSX } from 'react'
+import { useParams } from 'react-router-dom'
+import { Info } from './pages/Info'
+import { Install } from './pages/Install'
+import { MainContainer } from '../../layout/MainContainer'
+import { Building } from './pages/Building'
 
 const content: { [link: string]: JSX.Element } = {
-  ["info"]: <Info />,
-  ["install"]: <Install />,
-  ["building"]: <Building />,
-  ["bugs"]: <Text>Да я хз вроде всё идеально работает хер докопаешься</Text>,
-};
+  ['info']: <Info />,
+  ['install']: <Install />,
+  ['building']: <Building />,
+  ['bugs']: <Text>Да я хз вроде всё идеально работает хер докопаешься</Text>,
+}
 
 export const GetStartedLayout = () => {
-  const { category } = useParams();
+  const { category } = useParams()
 
   const sidebarItems: SidebarItemType[] = [
     {
-      text: "О проекте",
-      link: "info",
+      text: 'О проекте',
+      link: 'info',
     },
     {
-      text: "Установка",
-      link: "install",
+      text: 'Установка',
+      link: 'install',
     },
     {
-      text: "Компиляция исходников",
-      link: "building",
+      text: 'Компиляция исходников',
+      link: 'building',
     },
     {
-      text: "Известные баги/недочеты",
-      link: "bugs",
+      text: 'Известные баги/недочеты',
+      link: 'bugs',
     },
     {
-      text: "Репозиторий на Github",
-      link: "https://github.com/antim0118/LuaPlayer-by-YuliaTeam",
+      text: 'Репозиторий на Github',
+      link: 'https://github.com/antim0118/LuaPlayer-by-YuliaTeam',
     },
-  ];
+  ]
 
   return (
     <Flex>
@@ -57,5 +57,5 @@ export const GetStartedLayout = () => {
         </Box>
       </MainContainer>
     </Flex>
-  );
-};
+  )
+}
