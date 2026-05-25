@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react'
+import { Box, Link } from '@chakra-ui/react'
 import { useEffect, useRef, type DOMAttributes } from 'react'
 import type { TabItemType } from './types'
 import { useColorPalette } from '@/components/ui/ColorMode'
@@ -31,14 +31,13 @@ export const TabLink = ({
   useEffect(() => {
     if (!isSelected || !ref.current) return
 
-    ref.current.scrollIntoView({ behavior: 'smooth' })
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [isSelected])
 
   return (
-    <Link
+    <Box
       ref={ref}
-      unstyled
-      href="#"
+      userSelect="none"
       onClick={!item.disabled ? onClick : undefined}
       display="flex"
       alignItems="center"
@@ -54,6 +53,6 @@ export const TabLink = ({
       cursor={item.disabled ? 'disabled' : 'pointer'}
     >
       {item.label}
-    </Link>
+    </Box>
   )
 }
