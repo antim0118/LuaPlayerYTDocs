@@ -25,16 +25,12 @@ export const HEADER_TABS: TabItemType[] = [
   },
   {
     key: 'tutorials',
-    label: 'Туториалы',
-  },
-  {
-    key: 'libs',
-    label: 'Библиотеки',
+    label: 'Уроки',
     disabled: true,
   },
   {
     key: 'games',
-    label: 'Игры',
+    label: 'Примеры игр',
     disabled: true,
   },
 ] as const
