@@ -37,8 +37,4 @@ export const HEADER_TABS: TabItemType[] = [
     label: 'Игры',
     disabled: true,
   },
-  {
-    key: 'textureCalc',
-    label: 'калькулятор емае',
-  },
 ] as const
