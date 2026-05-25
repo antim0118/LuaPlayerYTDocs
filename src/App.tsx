@@ -23,6 +23,8 @@ export const App = () => {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Navigate to="/getstarted/info" />} />
+
+          <Route path="getstarted" element={<Navigate to="/getstarted/info" />}></Route>
           <Route path="getstarted/:category">
             <Route index element={<GetStartedLayout />} />
           </Route>
