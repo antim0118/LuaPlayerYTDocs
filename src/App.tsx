@@ -7,7 +7,6 @@ import { Box } from '@chakra-ui/react'
 import { useColorPalette } from './components/ui/ColorMode'
 import { useEffect } from 'react'
 import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill'
-import { TutorialsLayout } from './components/tabs/Tutorials/TutorialsLayout'
 
 export const App = () => {
   const { bgColor } = useColorPalette()
