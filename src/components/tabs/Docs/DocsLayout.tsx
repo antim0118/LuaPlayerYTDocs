@@ -1,25 +1,25 @@
 import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react'
 import { useParsedFiles } from '@/hooks/useParsedFiles'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
-import { useParams } from 'react-router-dom'
 import { VersionSelector } from '../../VersionSelector'
 import { Function } from './Function'
 import { MainContainer } from '../../layout/MainContainer'
 import { useVersionState } from '@/hooks/useVersionState'
 import { ExternalLink } from '@/components/ExternalLink'
+import { usePageRouting } from '@/hooks/usePageRouting'
 
 export const DocsLayout = () => {
   const [version, setVersion] = useVersionState()
   const { files, isLoading, error } = useParsedFiles(version)
-  const { category } = useParams()
+  const { page } = usePageRouting()
 
-  const fileCategory = files?.find((file) => file.mainClass.name === category)
+  const fileCategory = files?.find((file) => file.mainClass.name === page)
   const mainClass = fileCategory?.mainClass
 
   const sidebarItems = files?.map<SidebarItemType>((file) => ({
     text: file.mainClass.name,
     link: file.mainClass.name,
-    isSelected: file.mainClass.name === category,
+    isSelected: file.mainClass.name === page,
   }))
 
   const contentItems = mainClass?.functions.map((func) => <Function key={func.name} func={func} />)

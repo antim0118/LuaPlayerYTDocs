@@ -1,10 +1,10 @@
 import type { SidebarItemType } from './Sidebar'
 import { Box, Link } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
 import { useColorPalette } from '../../ui/ColorMode'
 import { LuExternalLink } from 'react-icons/lu'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
+import { usePageRouting } from '@/hooks/usePageRouting'
 
 type Props = {
   item: SidebarItemType
@@ -12,13 +12,13 @@ type Props = {
 }
 
 export const SidebarItem = ({ item, isSelected }: Props) => {
-  const navigate = useNavigate()
+  const { goToPage } = usePageRouting()
   const { setMobileMenuIsOpened } = useContext(AppContext)
   const { accentColor, selectedFontColor } = useColorPalette()
   const isExternalLink = item.link.startsWith('http')
 
   const onClickHandler = () => {
-    if (!isExternalLink) navigate(`../${item.link}`, { relative: 'path' })
+    if (!isExternalLink) goToPage(item.link)
     setMobileMenuIsOpened?.(false)
   }
 

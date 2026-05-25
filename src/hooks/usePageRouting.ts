@@ -13,7 +13,7 @@ export const usePageRouting = () => {
   const page = paths.page as string | undefined
 
   const goToCategory = (category: string) => {
-    navigate({ pathname: category })
+    navigate({ pathname: `/${category}` }, { })
   }
 
   const goToPage = (page: string) => {

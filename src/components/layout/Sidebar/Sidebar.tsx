@@ -1,11 +1,10 @@
 import { Box, VStack } from '@chakra-ui/react'
 import { useContext, type PropsWithChildren } from 'react'
-import { useLocation } from 'react-router-dom'
 import { useColorPalette } from '../../ui/ColorMode'
-import { match } from 'path-to-regexp'
 import { AppContext } from '@/AppContext'
 import { SidebarItem } from './SidebarItem'
 import { HEADER_HEIGHT } from '@/constants'
+import { usePageRouting } from '@/hooks/usePageRouting'
 
 export type SidebarItemType = {
   text: string
@@ -15,16 +14,11 @@ export type SidebarItemType = {
 
 export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }) => {
   const { bgColor } = useColorPalette()
-  const location = match('/:tab/:category')(useLocation().pathname)
   const { mobileMenuIsOpened } = useContext(AppContext)
-
-  let category = ''
-  if (typeof location === 'object') {
-    category = location.params['category'] as string
-  }
+  const { page } = usePageRouting()
 
   const sidebarItems = props.items?.map((item, idx) => {
-    return <SidebarItem key={idx} item={item} isSelected={category === item.link} />
+    return <SidebarItem key={idx} item={item} isSelected={page === item.link} />
   })
 
   return (

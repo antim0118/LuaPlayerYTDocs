@@ -1,11 +1,11 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import type { JSX } from 'react'
-import { useParams } from 'react-router-dom'
 import { Info } from './pages/Info'
 import { Install } from './pages/Install'
 import { MainContainer } from '../../layout/MainContainer'
 import { Building } from './pages/Building'
+import { usePageRouting } from '@/hooks/usePageRouting'
 
 const content: { [link: string]: JSX.Element } = {
   ['info']: <Info />,
@@ -15,7 +15,7 @@ const content: { [link: string]: JSX.Element } = {
 }
 
 export const GetStartedLayout = () => {
-  const { category } = useParams()
+  const { page } = usePageRouting()
 
   const sidebarItems: SidebarItemType[] = [
     {
@@ -46,12 +46,12 @@ export const GetStartedLayout = () => {
 
       <MainContainer>
         <Box mb={8}>
-          {!!category && (
+          {!!page && (
             <>
               {/* <Heading as="h1" size="xl" mb={6}>
                                     {sidebarItems.find((item) => item.link === category)?.text}
                                 </Heading> */}
-              {content[category]}
+              {content[page]}
             </>
           )}
         </Box>

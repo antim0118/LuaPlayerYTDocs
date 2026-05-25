@@ -1,9 +1,12 @@
 import { Flex, Heading, Link, Text } from '@chakra-ui/react'
 import { useColorPalette } from '../ui/ColorMode'
-import { useNavigate } from 'react-router-dom'
+import { usePageRouting } from '@/hooks/usePageRouting'
+import { HEADER_TABS } from '@/constants'
 
 export const NotFound = () => {
-  const navigate = useNavigate()
+  const { goToCategory } = usePageRouting()
+
+  const mainCategoryKey = HEADER_TABS[0].key
 
   const { accentColor } = useColorPalette()
 
@@ -17,10 +20,7 @@ export const NotFound = () => {
       <Link
         color="blue.400"
         textDecoration="underline"
-        onClick={() => {
-          navigate('/')
-          navigate(0)
-        }}
+        onClick={() => goToCategory(mainCategoryKey)}
       >
         братанчик-кабанчик, нажми сюда по приколу
       </Link>
