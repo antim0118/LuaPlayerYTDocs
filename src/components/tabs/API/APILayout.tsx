@@ -8,7 +8,7 @@ import { useVersionState } from '@/hooks/useVersionState'
 import { ExternalLink } from '@/components/ExternalLink'
 import { usePageRouting } from '@/hooks/usePageRouting'
 
-export const DocsLayout = () => {
+export const APILayout = () => {
   const [version, setVersion] = useVersionState()
   const { files, isLoading, error } = useParsedFiles(version)
   const { page } = usePageRouting()

@@ -20,8 +20,8 @@ export const HEADER_TABS: TabItemType[] = [
     label: 'Начало работы',
   },
   {
-    key: 'docs',
-    label: 'Документация',
+    key: 'api',
+    label: 'API',
   },
   {
     key: 'tutorials',
