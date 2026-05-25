@@ -1,6 +1,6 @@
 import type { LPYTVersion } from '@/types/LPYTVersion'
 import type { ParsedLuaFile } from '@/types/lua'
-import { parseLuaToObject } from '@/utils/luaParser'
+import { parseLuaToObject } from '@/shared/helpers'
 import { useEffect, useState } from 'react'
 
 let files: ParsedLuaFile[] | null = null
