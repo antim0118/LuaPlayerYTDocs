@@ -1,5 +1,7 @@
+import type { TabItemType } from './shared/ui/Tabs/types'
 import type { LPYTVersion } from './types/LPYTVersion'
-import type { TabType } from './types/TabType'
+
+export const MAIN_CONTAINER_WIDTH = 1280
 
 export const HEADER_HEIGHT = 100
 
@@ -12,31 +14,31 @@ export const VERSIONS: LPYTVersion[] = [
 
 export const DEFAULT_VERSION: LPYTVersion = '0.5_beta_4'
 
-export const HEADER_TABS: TabType[] = [
+export const HEADER_TABS: TabItemType[] = [
   {
-    text: 'Начало работы',
-    value: 'getstarted',
+    key: 'getstarted',
+    label: 'Начало работы',
   },
   {
-    text: 'Документация',
-    value: 'docs',
+    key: 'docs',
+    label: 'Документация',
   },
   {
-    text: 'Туториалы',
-    value: 'tutorials',
+    key: 'tutorials',
+    label: 'Туториалы',
   },
   {
-    text: 'Библиотеки',
-    value: 'libs',
+    key: 'libs',
+    label: 'Библиотеки',
     disabled: true,
   },
   {
-    text: 'Игры',
-    value: 'games',
+    key: 'games',
+    label: 'Игры',
     disabled: true,
   },
   {
-    text: 'калькулятор емае',
-    value: 'textureCalc',
+    key: 'textureCalc',
+    label: 'калькулятор емае',
   },
-]
+] as const

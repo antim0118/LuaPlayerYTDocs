@@ -1,17 +1,27 @@
 import { Button, Flex, Heading } from '@chakra-ui/react'
 import { LuMenu, LuMoon, LuSun } from 'react-icons/lu'
 import { useColorMode, useColorPalette } from '../../ui/ColorMode'
-import { HeaderTabs } from './HeaderTabs'
 import { Logo } from '@/shared/ui/Logo'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
-import { HEADER_HEIGHT } from '@/constants'
+import { HEADER_HEIGHT, HEADER_TABS, MAIN_CONTAINER_WIDTH } from '@/constants'
+import { Tabs } from '@/shared/ui/Tabs'
+import { usePageRouting } from '@/hooks/usePageRouting'
 
 export const Header = () => {
   const { toggleColorMode, colorMode } = useColorMode()
   // const [locale, setLocale, localeList] = useLocale();
   const { setMobileMenuIsOpened } = useContext(AppContext)
-  const { bgColor } = useColorPalette()
+  const { headerColors: { bgColor } } = useColorPalette()
+  const { category, goToCategory } = usePageRouting()
+
+  const tabs = <Tabs items={HEADER_TABS} selectedKey={category} onChangeSelectedKey={goToCategory} />
+
+  const heading = (
+    <Heading size="lg" fontWeight={900} userSelect="none">
+      LuaPlayerYT
+    </Heading>
+  )
 
   const rightSideButtons = (
     <Flex gap={2}>
@@ -38,40 +48,26 @@ export const Header = () => {
   )
 
   const pcHeader = (
-    <>
-      <Flex justify="space-between" align="center" height={60} hideBelow="md">
-        <Flex>
-          <Logo width={36} height={36} />
-        </Flex>
-        <Heading size="lg" fontWeight={900} userSelect="none">
-          LuaPlayerYT
-        </Heading>
-        {rightSideButtons}
+    <Flex justify="space-between" align="center" height={60} paddingX={5} hideBelow="md">
+      <Flex>
+        <Logo width={36} height={36} />
       </Flex>
-      <Flex justify="space-between" align="center" height={40} hideBelow="md">
-        <HeaderTabs />
-      </Flex>
-    </>
+      {heading}
+      {rightSideButtons}
+    </Flex>
   )
 
   const mobileHeader = (
-    <>
-      <Flex justify="space-between" align="center" height={60} hideFrom="md">
-        <Button variant="ghost" onClick={() => setMobileMenuIsOpened?.((v: boolean) => !v)}>
-          <LuMenu />
-        </Button>
-        <Flex alignItems="center" gap={4}>
-          <Logo width={36} height={36} />
-          <Heading size="lg" fontWeight={900} userSelect="none">
-            LuaPlayerYT
-          </Heading>
-        </Flex>
-        {rightSideButtons}
+    <Flex justify="space-between" align="center" height={60} paddingX={5} hideFrom="md">
+      <Button variant="ghost" onClick={() => setMobileMenuIsOpened?.((v: boolean) => !v)}>
+        <LuMenu />
+      </Button>
+      <Flex alignItems="center" gap={4}>
+        <Logo width={36} height={36} />
+        {heading}
       </Flex>
-      <Flex justify="space-between" align="center" height={40} hideFrom="md">
-        <HeaderTabs />
-      </Flex>
-    </>
+      {rightSideButtons}
+    </Flex>
   )
 
   return (
@@ -82,14 +78,23 @@ export const Header = () => {
       position="sticky"
       width="full"
       zIndex={1}
-      pl={5}
-      pr={5}
       top={0}
       shadow="sm"
       background={bgColor}
     >
-      {pcHeader}
-      {mobileHeader}
+      <Flex
+        flexDirection="column"
+        margin="auto"
+        width="stretch"
+        maxWidth={MAIN_CONTAINER_WIDTH}
+        height="100%"
+      >
+        {pcHeader}
+        {mobileHeader}
+        <Flex justify="space-between" align="center" height={40}>
+          {tabs}
+        </Flex>
+      </Flex>
     </Flex>
   )
 }

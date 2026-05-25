@@ -65,11 +65,30 @@ export const DarkMode = React.forwardRef<HTMLSpanElement, SpanProps>(function Da
 })
 
 export const useColorPalette = () => {
-  const accentColor = useColorModeValue('gray.900', 'red.600')
-  const accentColorHex = useColorModeValue('#18181b', '#dc2626') // используется в лого
+  const accentColor = useColorModeValue('#18181b', '#dc2626') // используется в лого
   const accentColorPalette = useColorModeValue('gray', 'red')
   const selectedFontColor = useColorModeValue('gray.200', 'gray.900')
   const bgColor = useColorModeValue('white', 'gray.900')
+  const fgColor = useColorModeValue('#09090b', '#fafafa')
+  const disabledColor = useColorModeValue('#A8A8AD', '#5A5A60')
 
-  return { accentColor, accentColorHex, accentColorPalette, selectedFontColor, bgColor }
+  const headerColors = {
+    bgColor
+  }
+
+  const tabsColors = {
+    selectedTextColor: fgColor,
+    disabledTextColor: disabledColor,
+    textColor: useColorModeValue('#52525b', '#a1a1aa'),
+    borderColor: accentColor
+  }
+
+  return {
+    tabsColors,
+    headerColors,
+    accentColor,
+    accentColorPalette,
+    selectedFontColor,
+    bgColor
+  }
 }
