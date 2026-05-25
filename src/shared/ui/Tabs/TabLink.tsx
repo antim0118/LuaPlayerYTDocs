@@ -39,16 +39,19 @@ export const TabLink = ({
       ref={ref}
       unstyled
       href="#"
-      onClick={onClick}
+      onClick={!item.disabled ? onClick : undefined}
       display="flex"
       alignItems="center"
+      justifyContent="center"
       fontSize="sm"
       fontWeight="medium"
       color={getTabTextColor()}
+      minWidth={100}
       height="100%"
       boxShadow={`inset 0 ${isSelected ? -2 : 0}px 0 0 ${borderColor}`}
       paddingX={4}
       flexShrink={0}
+      cursor={item.disabled ? 'disabled' : 'pointer'}
     >
       {item.label}
     </Link>
