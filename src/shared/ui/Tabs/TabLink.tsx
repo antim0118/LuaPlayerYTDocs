@@ -1,4 +1,4 @@
-import { Box, Link } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { useEffect, useRef, type DOMAttributes } from 'react'
 import type { TabItemType } from './types'
 import { useColorPalette } from '@/components/ui/ColorMode'
