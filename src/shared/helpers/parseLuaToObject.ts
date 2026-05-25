@@ -1,4 +1,4 @@
-import type { LuaFunction, ParsedLuaFile, LuaArgument } from '../types/lua'
+import type { LuaFunction, ParsedLuaFile, LuaArgument } from '@/types/lua'
 
 interface ParserState {
   currentFunction?: LuaFunction
