@@ -11,8 +11,13 @@ export const NotFound = () => {
   const { accentColor } = useColorPalette()
 
   return (
-    <Flex direction="column" alignItems="center" m={5}>
-      <Heading color={accentColor} size="7xl">
+    <Flex
+      direction="column"
+      alignItems="center"
+      marginX="auto"
+      marginY={16}
+    >
+      <Heading as="a" color={accentColor} size="7xl">
         ёмаё.
       </Heading>
       <Text>ты попал на несуществующую страницу 😭</Text>
