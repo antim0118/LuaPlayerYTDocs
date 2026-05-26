@@ -18,7 +18,7 @@ export const Header = () => {
   const tabs = <Tabs items={HEADER_TABS} selectedKey={category} onChangeSelectedKey={goToCategory} />
 
   const heading = (
-    <Heading size="lg" fontWeight={900} userSelect="none">
+    <Heading as="h3" size="lg" fontWeight={900} userSelect="none">
       LuaPlayerYT
     </Heading>
   )
