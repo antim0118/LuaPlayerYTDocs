@@ -14,7 +14,7 @@ const content: { [link: string]: JSX.Element } = {
   ['bugs']: <Text>Да я хз вроде всё идеально работает хер докопаешься</Text>,
 }
 
-export const GetStartedLayout = () => {
+export const DocsLayout = () => {
   const { page } = usePageRouting()
 
   const sidebarItems: SidebarItemType[] = [

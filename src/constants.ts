@@ -16,8 +16,8 @@ export const DEFAULT_VERSION: LPYTVersion = '0.5_beta_4'
 
 export const HEADER_TABS: TabItemType[] = [
   {
-    key: 'getstarted',
-    label: 'Начало работы',
+    key: 'docs',
+    label: 'Документация',
   },
   {
     key: 'api',
