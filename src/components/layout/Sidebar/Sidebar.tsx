@@ -3,7 +3,7 @@ import { useContext, type PropsWithChildren } from 'react'
 import { useColorPalette } from '../../ui/ColorMode'
 import { AppContext } from '@/AppContext'
 import { SidebarItem } from './SidebarItem'
-import { HEADER_HEIGHT } from '@/constants'
+import { HEADER_HEIGHT, SIDEBAR_WIDTH } from '@/constants'
 import { usePageRouting } from '@/hooks/usePageRouting'
 
 export type SidebarItemType = {
@@ -13,7 +13,7 @@ export type SidebarItemType = {
 }
 
 export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }) => {
-  const { bgColor } = useColorPalette()
+  const { bgColor, borderColor } = useColorPalette()
   const { mobileMenuIsOpened } = useContext(AppContext)
   const { page } = usePageRouting()
 
@@ -23,10 +23,10 @@ export const Sidebar = (props: PropsWithChildren & { items?: SidebarItemType[] }
 
   return (
     <Box
-      w="300px"
+      w={SIDEBAR_WIDTH}
       borderRightStyle="solid"
       borderRightWidth={1}
-      borderColor="#80808040"
+      borderColor={borderColor}
       position="fixed"
       p={4}
       h={`calc(100vh - ${HEADER_HEIGHT}px)`}

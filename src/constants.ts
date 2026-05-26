@@ -2,6 +2,7 @@ import type { TabItemType } from './shared/ui/Tabs/types'
 import type { LPYTVersion } from './types/LPYTVersion'
 
 export const MAIN_CONTAINER_WIDTH = 1280
+export const SIDEBAR_WIDTH = 300
 
 export const HEADER_HEIGHT = 100
 

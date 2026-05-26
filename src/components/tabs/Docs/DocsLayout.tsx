@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import type { JSX } from 'react'
 import { Info } from './pages/Info'
@@ -41,7 +41,7 @@ export const DocsLayout = () => {
   ]
 
   return (
-    <Flex>
+    <>
       <Sidebar items={sidebarItems} />
 
       <PageContainer>
@@ -55,7 +55,7 @@ export const DocsLayout = () => {
             </>
           )}
         </Box>
-    </Flex>
       </PageContainer>
+    </>
   )
 }

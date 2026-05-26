@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react'
+import { Box, Heading, Text, Spinner } from '@chakra-ui/react'
 import { useParsedFiles } from '@/hooks/useParsedFiles'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import { VersionSelector } from '../../VersionSelector'
@@ -25,7 +25,7 @@ export const APILayout = () => {
   const contentItems = mainClass?.functions.map((func) => <Function key={func.name} func={func} />)
 
   return (
-    <Flex>
+    <>
       <Sidebar items={sidebarItems}>
         <VersionSelector version={version} setVersion={setVersion} />
         <ExternalLink href={`/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
@@ -44,7 +44,7 @@ export const APILayout = () => {
                 {contentItems}
               </Box>
             )}
-    </Flex>
       </PageContainer>
+    </>
   )
 }
