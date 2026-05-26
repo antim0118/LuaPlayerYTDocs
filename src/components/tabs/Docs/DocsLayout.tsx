@@ -1,17 +1,18 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import type { JSX } from 'react'
-import { Info } from './pages/Info'
-import { Install } from './pages/Install'
 import { PageContainer } from '../../layout/PageContainer'
-import { Building } from './pages/Building'
 import { usePageRouting } from '@/hooks/usePageRouting'
+import Info from './pages/Info.mdx'
+import Install from './pages/Install.mdx'
+import Building from './pages/Building.mdx'
+import Bugs from './pages/Bugs.mdx'
 
 const content: { [link: string]: JSX.Element } = {
   ['info']: <Info />,
   ['install']: <Install />,
   ['building']: <Building />,
-  ['bugs']: <Text>Да я хз вроде всё идеально работает хер докопаешься</Text>,
+  ['bugs']: <Bugs />,
 }
 
 export const DocsLayout = () => {
@@ -47,12 +48,9 @@ export const DocsLayout = () => {
       <PageContainer>
         <Box mb={8}>
           {!!page && (
-            <>
-              {/* <Heading as="h1" size="xl" mb={6}>
-                                    {sidebarItems.find((item) => item.link === category)?.text}
-                                </Heading> */}
+            <Flex direction="column" gap={6}>
               {content[page]}
-            </>
+            </Flex>
           )}
         </Box>
       </PageContainer>
