@@ -1,4 +1,4 @@
-import type { TabItemType } from './shared/ui/Tabs/types'
+import type { TabItemType } from '@/shared/ui'
 import type { LPYTVersion } from './types/LPYTVersion'
 
 export const MAIN_CONTAINER_WIDTH = 1280

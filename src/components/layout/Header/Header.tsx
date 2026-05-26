@@ -1,11 +1,10 @@
 import { Button, Flex, Heading } from '@chakra-ui/react'
 import { LuMenu, LuMoon, LuSun } from 'react-icons/lu'
 import { useColorMode, useColorPalette } from '../../ui/ColorMode'
-import { Logo } from '@/shared/ui/Logo'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
 import { HEADER_HEIGHT, HEADER_TABS, MAIN_CONTAINER_WIDTH } from '@/constants'
-import { Tabs } from '@/shared/ui/Tabs'
+import { Tabs, Logo } from '@/shared/ui'
 import { usePageRouting } from '@/hooks/usePageRouting'
 
 export const Header = () => {

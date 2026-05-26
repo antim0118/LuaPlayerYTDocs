@@ -32,7 +32,16 @@ export default defineConfig([
       'func-style': ['error', 'expression', { allowArrowFunctions: true }],
       '@typescript-eslint/no-require-imports': ['off'],
       '@stylistic/jsx-one-expression-per-line': ['off'],
-      '@stylistic/comma-dangle': ['off']
+      '@stylistic/comma-dangle': ['off'],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            './shared/ui/*',
+            '@/shared/ui/*',
+          ]
+        }
+      ]
     },
   },
   tseslint.configs.recommended,
