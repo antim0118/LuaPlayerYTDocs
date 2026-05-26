@@ -71,6 +71,7 @@ export const useColorPalette = () => {
   const bgColor = useColorModeValue('white', 'gray.900')
   const fgColor = useColorModeValue('#09090b', '#fafafa')
   const disabledColor = useColorModeValue('#A8A8AD', '#5A5A60')
+  const borderColor = '#80808040'
 
   const headerColors = {
     bgColor
@@ -86,9 +87,12 @@ export const useColorPalette = () => {
   return {
     tabsColors,
     headerColors,
+
     accentColor,
     accentColorPalette,
     selectedFontColor,
-    bgColor
+    bgColor,
+    fgColor,
+    borderColor
   }
 }
