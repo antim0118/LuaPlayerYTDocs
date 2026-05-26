@@ -3,7 +3,7 @@ import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import type { JSX } from 'react'
 import { Info } from './pages/Info'
 import { Install } from './pages/Install'
-import { MainContainer } from '../../layout/MainContainer'
+import { PageContainer } from '../../layout/PageContainer'
 import { Building } from './pages/Building'
 import { usePageRouting } from '@/hooks/usePageRouting'
 
@@ -44,7 +44,7 @@ export const DocsLayout = () => {
     <Flex>
       <Sidebar items={sidebarItems} />
 
-      <MainContainer>
+      <PageContainer>
         <Box mb={8}>
           {!!page && (
             <>
@@ -55,7 +55,7 @@ export const DocsLayout = () => {
             </>
           )}
         </Box>
-      </MainContainer>
     </Flex>
+      </PageContainer>
   )
 }

@@ -3,7 +3,7 @@ import { useParsedFiles } from '@/hooks/useParsedFiles'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import { VersionSelector } from '../../VersionSelector'
 import { Function } from './Function'
-import { MainContainer } from '../../layout/MainContainer'
+import { PageContainer } from '../../layout/PageContainer'
 import { useVersionState } from '@/hooks/useVersionState'
 import { ExternalLink } from '@/components/ExternalLink'
 import { usePageRouting } from '@/hooks/usePageRouting'
@@ -31,7 +31,7 @@ export const APILayout = () => {
         <ExternalLink href={`/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
       </Sidebar>
 
-      <MainContainer>
+      <PageContainer>
         {isLoading
           ? (<Spinner size="xl" />)
           : error
@@ -44,7 +44,7 @@ export const APILayout = () => {
                 {contentItems}
               </Box>
             )}
-      </MainContainer>
     </Flex>
+      </PageContainer>
   )
 }
