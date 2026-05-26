@@ -9,6 +9,7 @@
         "paths": {
             "@/*": ["./src/*"]
         },
+        "types": ["mdx"],
 
         /* Bundler mode */
         "moduleResolution": "bundler",
