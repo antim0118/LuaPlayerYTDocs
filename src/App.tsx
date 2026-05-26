@@ -20,14 +20,14 @@ export const App = () => {
     <Box background={bgColor} minH="100vh">
       <BrowserRouter>
         <Header />
-          <Route path="/" element={<Navigate to="/getstarted/info" />} />
         <MainContainer>
           <Routes>
             <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Navigate to="/docs/info" />} />
 
-          <Route path="getstarted" element={<Navigate to="/getstarted/info" />}></Route>
-          <Route path="getstarted/:category">
-            <Route index element={<GetStartedLayout />} />
+            <Route path="docs" element={<Navigate to="/docs/info" />}></Route>
+            <Route path="docs/:category">
+              <Route index element={<DocsLayout />} />
             </Route>
 
             <Route path="api" element={<Navigate to="/api/buttons" />}></Route>
