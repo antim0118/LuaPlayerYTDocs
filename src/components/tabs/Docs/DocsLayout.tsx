@@ -5,13 +5,11 @@ import { PageContainer } from '../../layout/PageContainer'
 import { usePageRouting } from '@/hooks/usePageRouting'
 import Info from './pages/Info.mdx'
 import Install from './pages/Install.mdx'
-import Building from './pages/Building.mdx'
 import Bugs from './pages/Bugs.mdx'
 
 const content: { [link: string]: JSX.Element } = {
   ['info']: <Info />,
   ['install']: <Install />,
-  ['building']: <Building />,
   ['bugs']: <Bugs />,
 }
 
@@ -26,10 +24,6 @@ export const DocsLayout = () => {
     {
       text: 'Установка',
       link: 'install',
-    },
-    {
-      text: 'Компиляция исходников',
-      link: 'building',
     },
     {
       text: 'Известные баги/недочеты',
