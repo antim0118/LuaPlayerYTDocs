@@ -1,14 +1,14 @@
 import { Button, Flex, Heading } from '@chakra-ui/react'
-import { LuMenu, LuMoon, LuSun } from 'react-icons/lu'
-import { useColorMode, useColorPalette } from '../../ui/ColorMode'
+import { LuMenu } from 'react-icons/lu'
+import { useColorPalette } from '../../ui/ColorMode'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
 import { HEADER_HEIGHT, HEADER_TABS, MAIN_CONTAINER_WIDTH } from '@/constants'
 import { Tabs, Logo } from '@/shared/ui'
 import { usePageRouting } from '@/hooks/usePageRouting'
+import { ToggleThemeButton } from './ToggleThemeButton'
 
 export const Header = () => {
-  const { toggleColorMode, colorMode } = useColorMode()
   // const [locale, setLocale, localeList] = useLocale();
   const { setMobileMenuIsOpened } = useContext(AppContext)
   const { headerColors: { bgColor } } = useColorPalette()
@@ -24,9 +24,7 @@ export const Header = () => {
 
   const rightSideButtons = (
     <Flex gap={2}>
-      <Button variant="ghost" onClick={toggleColorMode}>
-        {colorMode === 'light' ? <LuMoon /> : <LuSun />}
-      </Button>
+      <ToggleThemeButton />
       {/* <Menu.Root onSelect={(v) => setLocale(v.value)}>
         <Menu.Trigger asChild>
           <Button variant="ghost" fontFamily="Twemoji Country Flags" fontSize={20}>
