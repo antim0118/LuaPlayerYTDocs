@@ -1,7 +1,7 @@
 import type { LuaFunction } from '@/types/lua'
 import { Box, Heading, VStack, Text } from '@chakra-ui/react'
 import { Argument } from './Argument'
-import { Code } from '@/components/Code'
+import { Code } from '@/shared/ui'
 
 type Props = {
   func: LuaFunction

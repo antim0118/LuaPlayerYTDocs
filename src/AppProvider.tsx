@@ -5,10 +5,9 @@ import { AppContext } from '@/AppContext'
 import { MDXProvider } from '@mdx-js/react'
 import type { MDXComponents } from 'mdx/types'
 import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill'
-import { DotList, NumericList } from '@/shared/ui'
+import { DotList, NumericList, Code } from '@/shared/ui'
 import { ExternalLink } from '@/components/ExternalLink'
 import { ImageSnippet } from '@/components/ImageSnippet'
-import { Code } from '@/components/Code'
 
 export const AppProvider = (props: ColorModeProviderProps) => {
   const [mobileMenuIsOpened, setMobileMenuIsOpened] = useState(false)

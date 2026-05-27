@@ -1,4 +1,4 @@
-import { Code } from '@/components/Code'
+import { Code } from '@/shared/ui'
 import type { LuaArgument } from '@/types/lua'
 import { Box, Flex, Text } from '@chakra-ui/react'
 
