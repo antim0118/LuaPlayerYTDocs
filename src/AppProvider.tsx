@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, ChakraProvider, defaultSystem, Kbd } from '@chakra-ui/react'
+import { Box, ChakraProvider, defaultSystem, Kbd, Image } from '@chakra-ui/react'
 import { ColorModeProvider, type ColorModeProviderProps } from '@/components/ui/ColorMode'
 import { AppContext } from '@/AppContext'
 import { MDXProvider } from '@mdx-js/react'
