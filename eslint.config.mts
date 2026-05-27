@@ -3,6 +3,7 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 import { defineConfig } from 'eslint/config'
 import stylistic from '@stylistic/eslint-plugin'
+import importPlugin from 'eslint-plugin-import'
 
 export default defineConfig([
   stylistic.configs.recommended,
@@ -11,6 +12,7 @@ export default defineConfig([
     plugins: {
       js,
       '@stylistic': stylistic,
+      'import': importPlugin
     },
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
@@ -41,7 +43,8 @@ export default defineConfig([
             '@/shared/ui/*',
           ]
         }
-      ]
+      ],
+      'import/no-duplicates': 'error'
     },
   },
   tseslint.configs.recommended,
