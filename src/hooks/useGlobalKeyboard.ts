@@ -2,8 +2,18 @@ import { useEffect } from 'react'
 
 export const useGlobalKeyboard = (onKeyDown: (e: KeyboardEvent) => void) => {
   useEffect(() => {
-    document.addEventListener('keydown', onKeyDown)
+    const onKeyDownHandler = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement
 
-    return () => document.removeEventListener('keydown', onKeyDown)
+      if (['INPUT', 'TEXTAREA'].includes(el.tagName)) {
+        return
+      }
+
+      onKeyDown(e)
+    }
+
+    document.addEventListener('keydown', onKeyDownHandler)
+
+    return () => document.removeEventListener('keydown', onKeyDownHandler)
   }, [onKeyDown])
 }

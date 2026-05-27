@@ -9,8 +9,6 @@ export const useParsedFiles = (version: LPYTVersion) => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>()
 
-  console.log(files)
-
   useEffect(() => {
     const fetchLuaFiles = async () => {
       try {
@@ -21,7 +19,7 @@ export const useParsedFiles = (version: LPYTVersion) => {
         if (!response.ok) {
           throw new Error('Failed to fetch file list')
         }
-        console.log('status', response.status)
+
         const fileList = await response.json()
 
         const loadFile = async (filePath: string) => {
@@ -33,10 +31,8 @@ export const useParsedFiles = (version: LPYTVersion) => {
         }
 
         const fileContents = await Promise.all(fileList.map(loadFile))
-        // console.log("fileContents: ", fileContents);
 
         const parsedFiles = await Promise.all(fileContents.map(async (content) => await parseLuaToObject(content)))
-        // console.log("parsedFiles: ", parsedFiles);
 
         files = parsedFiles
         setError(null)

@@ -25,7 +25,7 @@ export const ImageSnippet = ({ src, maxWidth, children, margin }: Props) => {
         border="1px solid"
         borderColor={borderColor}
       />
-      <Text fontStyle="italic" fontSize="small" mt={2}>
+      <Text as="a" fontStyle="italic" fontSize="small" mt={2}>
         {children}
       </Text>
     </Flex>
