@@ -51,6 +51,7 @@ export const TabLink = ({
       paddingX={4}
       flexShrink={0}
       cursor={item.disabled ? 'disabled' : 'pointer'}
+      transition="color 0.25s, box-shadow 0.25s"
     >
       {item.label}
     </Box>

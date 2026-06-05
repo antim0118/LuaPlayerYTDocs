@@ -1,7 +1,7 @@
 import { Button, Flex, Heading } from '@chakra-ui/react'
 import { LuMenu } from 'react-icons/lu'
 import { useColorPalette } from '../../ui/ColorMode'
-import { useContext } from 'react'
+import { useContext, useMemo } from 'react'
 import { AppContext } from '@/AppContext'
 import { HEADER_HEIGHT, MAIN_CONTAINER_WIDTH } from '@/constants'
 import { Tabs, Logo } from '@/shared/ui'
