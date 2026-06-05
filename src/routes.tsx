@@ -1,7 +1,6 @@
 import type { JSX } from 'react'
 import { DocsLayout } from '@/components/tabs/Docs/DocsLayout'
 import { APILayout } from '@/components/tabs/API/APILayout'
-import { TutorialsLayout } from '@/components/tabs/Tutorials/TutorialsLayout'
 
 type RouteType = {
   key: string
@@ -28,7 +27,7 @@ export const ROUTES: RouteType[] = [
   {
     key: 'tutorials',
     label: 'Уроки',
-    component: <TutorialsLayout />,
+    // component: <TutorialsPage />,
     disabled: true,
   },
   {
