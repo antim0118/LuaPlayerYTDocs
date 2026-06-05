@@ -2,10 +2,10 @@ import { APILayout } from '@/components/tabs/API/APILayout'
 import { Header } from '@/components/layout/Header/Header'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { DocsLayout } from '@/components/tabs/Docs/DocsLayout'
-import { NotFound } from './components/layout/NotFound'
 import { Box } from '@chakra-ui/react'
 import { useColorPalette } from './components/ui/ColorMode'
 import { MainContainer } from '@/shared/ui'
+import { NotFoundPage } from '@/pages'
 
 export const App = () => {
   const { bgColor } = useColorPalette()
@@ -16,7 +16,7 @@ export const App = () => {
         <Header />
         <MainContainer>
           <Routes>
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<Navigate to="/docs/info" />} />
 
             <Route path="docs" element={<Navigate to="/docs/info" />}></Route>

@@ -41,6 +41,8 @@ export default defineConfig([
           patterns: [
             './shared/ui/*',
             '@/shared/ui/*',
+            './pages/*',
+            '@/pages/*',
           ]
         }
       ],
