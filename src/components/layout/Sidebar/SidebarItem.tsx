@@ -4,7 +4,7 @@ import { useColorPalette } from '../../ui/ColorMode'
 import { LuExternalLink } from 'react-icons/lu'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
-import { usePageRouting } from '@/hooks/usePageRouting'
+import { usePageRouting } from '@/hooks'
 
 type Props = {
   item: SidebarItemType

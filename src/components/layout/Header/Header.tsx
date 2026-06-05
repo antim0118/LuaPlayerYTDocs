@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
 import { HEADER_HEIGHT, HEADER_TABS, MAIN_CONTAINER_WIDTH } from '@/constants'
 import { Tabs, Logo } from '@/shared/ui'
-import { usePageRouting } from '@/hooks/usePageRouting'
+import { usePageRouting } from '@/hooks'
 import { ToggleThemeButton } from './ToggleThemeButton'
 
 export const Header = () => {

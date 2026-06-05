@@ -1,12 +1,10 @@
 import { Box, Heading, Text, Spinner } from '@chakra-ui/react'
-import { useParsedFiles } from '@/hooks/useParsedFiles'
+import { useParsedFiles, useVersionState, usePageRouting } from '@/hooks'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import { VersionSelector } from '../../VersionSelector'
 import { Function } from './Function'
 import { PageContainer } from '../../layout/PageContainer'
-import { useVersionState } from '@/hooks/useVersionState'
 import { ExternalLink } from '@/components/ExternalLink'
-import { usePageRouting } from '@/hooks/usePageRouting'
 
 export const APILayout = () => {
   const [version, setVersion] = useVersionState()

@@ -4,7 +4,7 @@ import { useColorPalette } from '../../ui/ColorMode'
 import { AppContext } from '@/AppContext'
 import { SidebarItem } from './SidebarItem'
 import { HEADER_HEIGHT, SIDEBAR_WIDTH } from '@/constants'
-import { usePageRouting } from '@/hooks/usePageRouting'
+import { usePageRouting } from '@/hooks'
 
 export type SidebarItemType = {
   text: string

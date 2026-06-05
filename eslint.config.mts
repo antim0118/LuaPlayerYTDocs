@@ -43,6 +43,8 @@ export default defineConfig([
             '@/shared/ui/*',
             './pages/*',
             '@/pages/*',
+            './hooks/*',
+            '@/hooks/*',
           ]
         }
       ],
