@@ -2,10 +2,8 @@ import { Box, Flex } from '@chakra-ui/react'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
 import type { JSX } from 'react'
 import { PageContainer } from '../../layout/PageContainer'
-import Info from './pages/Info.mdx'
-import Install from './pages/Install.mdx'
-import Bugs from './pages/Bugs.mdx'
 import { usePageRouting } from '@/hooks'
+import { Info, Install, Bugs } from './pages'
 
 const content: { [link: string]: JSX.Element } = {
   ['info']: <Info />,
