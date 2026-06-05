@@ -1,5 +1,4 @@
-import type { TabItemType } from '@/shared/ui'
-import type { LPYTVersion } from './types/LPYTVersion'
+import type { LPYTVersion } from '@/types/LPYTVersion'
 
 export const MAIN_CONTAINER_WIDTH = 1280
 export const SIDEBAR_WIDTH = 300
@@ -14,24 +13,3 @@ export const VERSIONS: LPYTVersion[] = [
 ]
 
 export const DEFAULT_VERSION: LPYTVersion = '0.5_beta_4'
-
-export const HEADER_TABS: TabItemType[] = [
-  {
-    key: 'docs',
-    label: 'Документация',
-  },
-  {
-    key: 'api',
-    label: 'API',
-  },
-  {
-    key: 'tutorials',
-    label: 'Уроки',
-    disabled: true,
-  },
-  {
-    key: 'games',
-    label: 'Примеры игр',
-    disabled: true,
-  },
-] as const

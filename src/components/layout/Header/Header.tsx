@@ -3,10 +3,12 @@ import { LuMenu } from 'react-icons/lu'
 import { useColorPalette } from '../../ui/ColorMode'
 import { useContext } from 'react'
 import { AppContext } from '@/AppContext'
-import { HEADER_HEIGHT, HEADER_TABS, MAIN_CONTAINER_WIDTH } from '@/constants'
+import { HEADER_HEIGHT, MAIN_CONTAINER_WIDTH } from '@/constants'
 import { Tabs, Logo } from '@/shared/ui'
 import { usePageRouting } from '@/hooks'
+import { EngineVersionSelect } from '@/features/engine-version/ui/EngineVersionSelect'
 import { ToggleThemeButton } from './ToggleThemeButton'
+import { ROUTES } from '@/routes'
 
 export const Header = () => {
   // const [locale, setLocale, localeList] = useLocale();
@@ -14,7 +16,7 @@ export const Header = () => {
   const { headerColors: { bgColor } } = useColorPalette()
   const { category, goToCategory } = usePageRouting()
 
-  const tabs = <Tabs items={HEADER_TABS} selectedKey={category} onChangeSelectedKey={goToCategory} />
+  const tabs = <Tabs items={ROUTES} selectedKey={category} onChangeSelectedKey={goToCategory} />
 
   const heading = (
     <Heading as="h3" size="lg" fontWeight={900} userSelect="none">
@@ -22,8 +24,9 @@ export const Header = () => {
     </Heading>
   )
 
-  const rightSideButtons = (
-    <Flex gap={2}>
+  const rightSideButtons = useMemo(() => (
+    <Flex gap={2} alignItems="center">
+      <EngineVersionSelect />
       <ToggleThemeButton />
       {/* <Menu.Root onSelect={(v) => setLocale(v.value)}>
         <Menu.Trigger asChild>
@@ -42,7 +45,7 @@ export const Header = () => {
         </Menu.Positioner>
       </Menu.Root> */}
     </Flex>
-  )
+  ), [])
 
   const pcHeader = (
     <Flex justify="space-between" align="center" height={60} paddingX={5} hideBelow="md">

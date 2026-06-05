@@ -1,11 +1,10 @@
-import { APILayout } from '@/components/tabs/API/APILayout'
 import { Header } from '@/components/layout/Header/Header'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { DocsLayout } from '@/components/tabs/Docs/DocsLayout'
 import { Box } from '@chakra-ui/react'
 import { useColorPalette } from './components/ui/ColorMode'
 import { MainContainer } from '@/shared/ui'
 import { NotFoundPage } from '@/pages'
+import { CategoryPageRouter } from '@/widgets/CategoryPageRouter'
 
 export const App = () => {
   const { bgColor } = useColorPalette()
@@ -18,17 +17,8 @@ export const App = () => {
           <Routes>
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<Navigate to="/docs/info" />} />
-
-            <Route path="docs" element={<Navigate to="/docs/info" />}></Route>
-            <Route path="docs/:category">
-              <Route index element={<DocsLayout />} />
-            </Route>
-
-            <Route path="api" element={<Navigate to="/api/buttons" />}></Route>
-            <Route path="api/:category" element={<APILayout />} />
-
-            {/* <Route path="tutorials" element={<TutorialsLayout />} />
-          <Route path="tutorials/:name" element={<TutorialsLayout />} /> */}
+            <Route path="/:category" element={<CategoryPageRouter />} />
+            <Route path="/:category/:page" element={<CategoryPageRouter />} />
           </Routes>
         </MainContainer>
       </BrowserRouter>

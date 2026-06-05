@@ -1,13 +1,13 @@
 import { useColorPalette } from '@/components/ui/ColorMode'
-import { HEADER_TABS } from '@/constants'
 import { usePageRouting } from '@/hooks'
+import { ROUTES } from '@/routes'
 import { Flex, Heading, Text, Link } from '@chakra-ui/react'
 
 export const NotFoundPage = () => {
   const { goToCategory } = usePageRouting()
   const { accentColor } = useColorPalette()
 
-  const mainCategoryKey = HEADER_TABS[0].key
+  const mainCategoryKey = ROUTES[0].key
 
   return (
     <Flex

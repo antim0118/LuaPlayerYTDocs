@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { match, compile } from 'path-to-regexp'
+import { compile, match } from 'path-to-regexp'
+import { ROUTES } from '@/routes'
 
 export const usePageRouting = () => {
   const location = useLocation()
@@ -13,7 +14,10 @@ export const usePageRouting = () => {
   const page = paths.page as string | undefined
 
   const goToCategory = (category: string) => {
-    navigate({ pathname: `/${category}` }, { })
+    const route = ROUTES.find((r) => r.key === category)
+    const defaultPage = typeof route?.defaultPage === 'function' ? route?.defaultPage() : route?.defaultPage
+
+    navigate({ pathname: toPath({ category, page: defaultPage }) }, {})
   }
 
   const goToPage = (page: string) => {
