@@ -6,7 +6,7 @@ import { AppContext } from '@/AppContext'
 import { HEADER_HEIGHT, MAIN_CONTAINER_WIDTH } from '@/constants'
 import { Tabs, Logo } from '@/shared/ui'
 import { usePageRouting } from '@/hooks'
-import { EngineVersionSelect } from '@/features/engine-version/ui/EngineVersionSelect'
+import { EngineVersionSelect } from '@/features/engine-version'
 import { ToggleThemeButton } from './ToggleThemeButton'
 import { ROUTES } from '@/routes'
 

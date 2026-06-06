@@ -8,6 +8,7 @@ import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill'
 import { DotList, NumericList, Code } from '@/shared/ui'
 import { ExternalLink } from '@/components/ExternalLink'
 import { ImageSnippet } from '@/components/ImageSnippet'
+import { VersionProvider, VersionableContent } from '@/features/engine-version'
 
 export const AppProvider = (props: ColorModeProviderProps) => {
   const [mobileMenuIsOpened, setMobileMenuIsOpened] = useState(false)
@@ -24,16 +25,19 @@ export const AppProvider = (props: ColorModeProviderProps) => {
     Kbd,
     Code,
     Image,
-    Box
+    Box,
+    VersionableContent
   }
 
   return (
     <AppContext value={{ mobileMenuIsOpened, setMobileMenuIsOpened }}>
-      <MDXProvider components={mdxComponents}>
-        <ChakraProvider value={defaultSystem}>
-          <ColorModeProvider {...props} />
-        </ChakraProvider>
-      </MDXProvider>
+      <VersionProvider>
+        <MDXProvider components={mdxComponents}>
+          <ChakraProvider value={defaultSystem}>
+            <ColorModeProvider {...props} />
+          </ChakraProvider>
+        </MDXProvider>
+      </VersionProvider>
     </AppContext>
   )
 }

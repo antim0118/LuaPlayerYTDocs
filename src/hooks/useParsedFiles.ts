@@ -1,11 +1,11 @@
-import type { LPYTVersion } from '@/types/LPYTVersion'
+import type { EngineVersionValue } from '@/features/engine-version'
 import type { ParsedLuaFile } from '@/types/lua'
 import { parseLuaToObject } from '@/shared/helpers'
 import { useEffect, useState } from 'react'
 
 let files: ParsedLuaFile[] | null = null
 
-export const useParsedFiles = (version: LPYTVersion) => {
+export const useParsedFiles = (version: EngineVersionValue) => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>()
 

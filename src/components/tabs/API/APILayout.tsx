@@ -1,13 +1,13 @@
 import { Box, Heading, Text, Spinner } from '@chakra-ui/react'
-import { useParsedFiles, useVersionState, usePageRouting } from '@/hooks'
+import { useParsedFiles, usePageRouting } from '@/hooks'
 import { Sidebar, type SidebarItemType } from '../../layout/Sidebar/Sidebar'
-import { VersionSelector } from '../../VersionSelector'
 import { Function } from './Function'
 import { PageContainer } from '../../layout/PageContainer'
 import { ExternalLink } from '@/components/ExternalLink'
+import { useVersionState } from '@/features/engine-version'
 
 export const APILayout = () => {
-  const [version, setVersion] = useVersionState()
+  const [version] = useVersionState()
   const { files, isLoading, error } = useParsedFiles(version)
   const { page } = usePageRouting()
 
@@ -25,7 +25,6 @@ export const APILayout = () => {
   return (
     <>
       <Sidebar items={sidebarItems}>
-        <VersionSelector version={version} setVersion={setVersion} />
         <ExternalLink href={`/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
       </Sidebar>
 

@@ -8,7 +8,7 @@ export type SelectItemType = {
 export interface SelectProps extends Pick<SelectRootProps, 'width' | 'minWidth' | 'maxWidth'> {
   value: string
   onValueChange: (value: string) => void
-  items: SelectItemType[]
+  items: readonly SelectItemType[]
   placeholder?: string
   dynamicWidth?: boolean
 }
