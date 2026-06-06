@@ -18,11 +18,6 @@ export const Header = () => {
 
   const tabs = <Tabs items={ROUTES} selectedKey={category} onChangeSelectedKey={goToCategory} />
 
-  const heading = (
-    <Heading as="h3" size="lg" fontWeight={900} userSelect="none">
-      LuaPlayerYT
-    </Heading>
-  )
 
   const rightSideButtons = useMemo(() => (
     <Flex gap={2} alignItems="center">
@@ -52,7 +47,9 @@ export const Header = () => {
       <Flex>
         <Logo width={36} height={36} />
       </Flex>
-      {heading}
+      <Heading as="h3" size="lg" fontWeight={900} userSelect="none">
+        LuaPlayerYT
+      </Heading>
       {rightSideButtons}
     </Flex>
   )
@@ -64,7 +61,9 @@ export const Header = () => {
       </Button>
       <Flex alignItems="center" gap={4}>
         <Logo width={36} height={36} />
-        {heading}
+        <Heading as="h3" size="lg" fontWeight={900} userSelect="none">
+          LPYT
+        </Heading>
       </Flex>
       {rightSideButtons}
     </Flex>
