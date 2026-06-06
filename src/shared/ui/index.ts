@@ -1,5 +1,5 @@
 export { Tabs, type TabItemType } from './Tabs'
-export { Select, type SelectProps } from './Select'
+export { Select, type SelectItemType, type SelectProps } from './Select'
 
 export { DotList } from './DotList'
 export { Logo } from './Logo'
