@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 let files: ParsedLuaFile[] | null = null
 
-export const useParsedFiles = (version: EngineVersionValue) => {
+export const useParsedFiles = (version: string | EngineVersionValue) => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>()
 

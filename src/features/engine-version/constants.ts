@@ -1,3 +1,5 @@
+import type { EngineVersionValue } from './types'
+
 export const ENGINE_VERSIONS = [
   {
     id: 9,
@@ -16,4 +18,4 @@ export const ENGINE_VERSIONS = [
   },
 ] as const
 
-export const DEFAULT_VERSION = '0.5_beta_4'
+export const DEFAULT_VERSION: EngineVersionValue = '0.5_beta_4'
