@@ -18,7 +18,6 @@ export const Header = () => {
 
   const tabs = <Tabs items={ROUTES} selectedKey={category} onChangeSelectedKey={goToCategory} />
 
-
   const rightSideButtons = useMemo(() => (
     <Flex gap={2} alignItems="center">
       <EngineVersionSelect />
