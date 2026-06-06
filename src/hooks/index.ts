@@ -1,6 +1,5 @@
 export { useGlobalKeyboard } from './useGlobalKeyboard'
 export { useLocale } from './useLocale'
-export { useLocalStorage } from './useLocalStorage'
 export { usePageRouting } from './usePageRouting'
 export { useParsedFiles } from './useParsedFiles'
 export { useVersionState } from './useVersionState'

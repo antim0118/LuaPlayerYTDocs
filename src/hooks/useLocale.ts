@@ -1,4 +1,4 @@
-import { useLocalStorage } from './useLocalStorage'
+import { useLocalStorage } from '@/shared/hooks'
 
 const localeList = ['ru', 'us']
 type LocaleListType = (typeof localeList)[number]
