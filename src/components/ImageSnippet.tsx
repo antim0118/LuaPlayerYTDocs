@@ -1,6 +1,6 @@
 import { Flex, Image, Text } from '@chakra-ui/react'
 import { type PropsWithChildren } from 'react'
-import { useColorPalette } from './ui/ColorMode'
+import { useColorPalette } from './ui'
 
 type Props = PropsWithChildren & {
   src: string

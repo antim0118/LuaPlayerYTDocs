@@ -39,12 +39,10 @@ export default defineConfig([
         'error',
         {
           patterns: [
-            './shared/ui/*',
-            '@/shared/ui/*',
-            './pages/*',
-            '@/pages/*',
-            './hooks/*',
-            '@/hooks/*',
+            '*/ui/*',
+            '*/pages/*',
+            '*/hooks/*',
+            '*/features/*/*',
           ]
         }
       ],
