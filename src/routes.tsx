@@ -9,6 +9,7 @@ type RouteType = {
   defaultPage?: string | (() => string)
   component?: JSX.Element
   disabled?: boolean
+  hideSidebar?: boolean
 }
 
 export const ROUTES: RouteType[] = [
@@ -29,6 +30,7 @@ export const ROUTES: RouteType[] = [
     label: 'Уроки',
     // component: <TutorialsPage />,
     disabled: true,
+    hideSidebar: true
   },
   {
     key: 'games',

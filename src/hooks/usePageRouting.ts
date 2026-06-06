@@ -13,6 +13,9 @@ export const usePageRouting = () => {
   const category = paths.category as string | undefined
   const page = paths.page as string | undefined
 
+  const currentRoute = ROUTES.find((r) => r.key === category)
+  const hideSidebar = currentRoute?.hideSidebar
+
   const goToCategory = (category: string) => {
     const route = ROUTES.find((r) => r.key === category)
     const defaultPage = typeof route?.defaultPage === 'function' ? route?.defaultPage() : route?.defaultPage
@@ -27,6 +30,7 @@ export const usePageRouting = () => {
   return {
     location,
     category, page,
+    hideSidebar,
     goToCategory,
     goToPage
   }

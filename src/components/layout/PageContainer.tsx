@@ -1,13 +1,10 @@
 import { MAIN_CONTAINER_WIDTH, SIDEBAR_WIDTH } from '@/constants'
+import { usePageRouting } from '@/hooks'
 import { Box, Container } from '@chakra-ui/react'
 import { type PropsWithChildren } from 'react'
 
-type Props = PropsWithChildren & {
-  disablePaddingForSidebar?: boolean
-}
-
-export const PageContainer = (props: Props) => {
-  const { disablePaddingForSidebar } = props
+export const PageContainer = ({ children }: PropsWithChildren) => {
+  const { hideSidebar } = usePageRouting()
 
   return (
     <Box
@@ -15,13 +12,12 @@ export const PageContainer = (props: Props) => {
       flex="1"
       padding={8}
       height="100%"
-      md={!disablePaddingForSidebar ? { pl: SIDEBAR_WIDTH } : undefined}
+      md={!hideSidebar ? { pl: SIDEBAR_WIDTH } : undefined}
       overflowY="auto"
     >
       <Container
-
         maxWidth={MAIN_CONTAINER_WIDTH - SIDEBAR_WIDTH}
-      >{props.children}
+      >{children}
       </Container>
     </Box>
   )
