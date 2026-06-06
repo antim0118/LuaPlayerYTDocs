@@ -42,7 +42,7 @@ export const Select = ({
 
     const updateWidth = (entries: ResizeObserverEntry[]) => {
       setDynamicWidthProps({
-        width: entries[0].contentRect.width + 42,
+        width: entries[0].contentRect.width + 48,
       })
     }
 
