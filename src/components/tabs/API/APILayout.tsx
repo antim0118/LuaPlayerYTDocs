@@ -25,7 +25,7 @@ export const APILayout = () => {
   return (
     <>
       <Sidebar items={sidebarItems}>
-        <ExternalLink href={`/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
+        <ExternalLink href={`/LuaPlayerYTDocs/LLS/${version}/${version}.zip`}>Скачать LLS архив</ExternalLink>
       </Sidebar>
 
       <PageContainer>

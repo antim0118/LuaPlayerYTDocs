@@ -5,6 +5,7 @@ import mdx from '@mdx-js/rollup'
 import { resolve } from 'node:path'
 
 export default defineConfig({
+  base: '/LuaPlayerYTDocs/',
   plugins: [
     {
       enforce: 'pre', ...mdx({

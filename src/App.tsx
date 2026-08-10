@@ -11,7 +11,7 @@ export const App = () => {
 
   return (
     <Box background={bgColor} minH="100vh">
-      <BrowserRouter>
+      <BrowserRouter basename="/LuaPlayerYTDocs">
         <Header />
         <MainContainer>
           <Routes>
