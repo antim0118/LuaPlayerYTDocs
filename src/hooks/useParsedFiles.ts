@@ -15,7 +15,8 @@ export const useParsedFiles = (version: string | EngineVersionValue) => {
         files = null
         setIsLoading(true)
 
-        const response = await fetch(`/LLS/${version}/index.json`)
+        // TODO: скорее всего, такой абсолютный путь поломает dev версию
+        const response = await fetch(`/LuaPlayerYTDocs/LLS/${version}/index.json`)
         if (!response.ok) {
           throw new Error('Failed to fetch file list')
         }
@@ -23,7 +24,8 @@ export const useParsedFiles = (version: string | EngineVersionValue) => {
         const fileList = await response.json()
 
         const loadFile = async (filePath: string) => {
-          const fileResponse = await fetch(`/LLS/${version}/${filePath}.lua`)
+          // TODO: скорее всего, такой абсолютный путь поломает dev версию
+          const fileResponse = await fetch(`/LuaPlayerYTDocs/LLS/${version}/${filePath}.lua`)
           if (!fileResponse.ok) {
             throw new Error(`Failed to fetch file: ${filePath}`)
           }
